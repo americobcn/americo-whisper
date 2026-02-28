@@ -7,34 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EADD70A2F4B7A34009C8298 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EADD7092F4B7A34009C8298 /* AVFoundation.framework */; };
-		1EADD70C2F4B7A46009C8298 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EADD70B2F4B7A46009C8298 /* Metal.framework */; };
-		1EADD70E2F4B7A4D009C8298 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EADD70D2F4B7A4D009C8298 /* Accelerate.framework */; };
-		1EADD7122F4B7DB6009C8298 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EADD7112F4B7DB6009C8298 /* libc++.tbd */; };
+		1EB8F62A2F5370D400F66701 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EADD70D2F4B7A4D009C8298 /* Accelerate.framework */; };
+		1EB8F62D2F5370D600F66701 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EADD7092F4B7A34009C8298 /* AVFoundation.framework */; };
+		1EB8F62F2F5370D700F66701 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EADD70B2F4B7A46009C8298 /* Metal.framework */; };
+		1EB8F6312F5370D800F66701 /* whisper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E35A65F2F536EA700EBA613 /* whisper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E35A65F2F536EA700EBA613 /* whisper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = whisper.framework; sourceTree = "<group>"; };
 		1EADD6E42F4B7606009C8298 /* americo-whisper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "americo-whisper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EADD7092F4B7A34009C8298 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1EADD70B2F4B7A46009C8298 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		1EADD70D2F4B7A4D009C8298 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		1EADD7112F4B7DB6009C8298 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1EADD6E62F4B7606009C8298 /* americo-whisper */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "americo-whisper";
-			sourceTree = "<group>";
-		};
-		1EADD6F22F4B7611009C8298 /* WhisperCpp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WhisperCpp;
-			sourceTree = "<group>";
-		};
-		1EADD7222F4B8E85009C8298 /* Resources */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -44,10 +34,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EADD7122F4B7DB6009C8298 /* libc++.tbd in Frameworks */,
-				1EADD70E2F4B7A4D009C8298 /* Accelerate.framework in Frameworks */,
-				1EADD70C2F4B7A46009C8298 /* Metal.framework in Frameworks */,
-				1EADD70A2F4B7A34009C8298 /* AVFoundation.framework in Frameworks */,
+				1EB8F62D2F5370D600F66701 /* AVFoundation.framework in Frameworks */,
+				1EB8F62F2F5370D700F66701 /* Metal.framework in Frameworks */,
+				1EB8F62A2F5370D400F66701 /* Accelerate.framework in Frameworks */,
+				1EB8F6312F5370D800F66701 /* whisper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,8 +47,6 @@
 		1EADD6DB2F4B7606009C8298 = {
 			isa = PBXGroup;
 			children = (
-				1EADD7222F4B8E85009C8298 /* Resources */,
-				1EADD6F22F4B7611009C8298 /* WhisperCpp */,
 				1EADD6E62F4B7606009C8298 /* americo-whisper */,
 				1EADD7082F4B7A34009C8298 /* Frameworks */,
 				1EADD6E52F4B7606009C8298 /* Products */,
@@ -76,7 +64,7 @@
 		1EADD7082F4B7A34009C8298 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1EADD7112F4B7DB6009C8298 /* libc++.tbd */,
+				1E35A65F2F536EA700EBA613 /* whisper.framework */,
 				1EADD70D2F4B7A4D009C8298 /* Accelerate.framework */,
 				1EADD70B2F4B7A46009C8298 /* Metal.framework */,
 				1EADD7092F4B7A34009C8298 /* AVFoundation.framework */,
@@ -101,8 +89,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				1EADD6E62F4B7606009C8298 /* americo-whisper */,
-				1EADD6F22F4B7611009C8298 /* WhisperCpp */,
-				1EADD7222F4B8E85009C8298 /* Resources */,
 			);
 			name = "americo-whisper";
 			packageProductDependencies = (
@@ -119,7 +105,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					1EADD6E32F4B7606009C8298 = {
 						CreatedOnToolsVersion = 26.2;
@@ -201,6 +187,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 569VP8PFMZ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -226,6 +213,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -265,6 +253,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 569VP8PFMZ;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -283,6 +272,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -292,17 +282,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "americo-whisper/americo-whisper.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 569VP8PFMZ;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = YES;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,11 +321,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.americobcn.americo-whisper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WhisperCpp/include/americo-whisper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -334,17 +342,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "americo-whisper/americo-whisper.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 569VP8PFMZ;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = YES;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -360,11 +381,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.americobcn.americo-whisper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WhisperCpp/include/americo-whisper-Bridging-Header.h";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 			};

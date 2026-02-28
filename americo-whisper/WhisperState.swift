@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import whisper
 
 class WhisperState {
     private var context: OpaquePointer?

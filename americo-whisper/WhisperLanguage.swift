@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import whisper
 
 struct WhisperLanguage: Identifiable, Hashable, Comparable {
     let id: Int

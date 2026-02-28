@@ -468,21 +468,22 @@ struct ContentView: View {
         
         Task.detached(priority: .userInitiated) {
             do {
-                let samples = try AudioFileReader.loadAudioFileSync(from: url)
+                var fullResult = ""
 
-                let result = await whisper?.transcribe(
-                    audioData: samples,
-                    language: language,
-                    translate: isTranslation,
-                    onChunkComplete: { partial in
-                        Task { @MainActor in
-                            self.transcription += partial
-                        }
+                try AudioFileReader.loadAudioInChunks(from: url) { chunk in
+                    let chunkText = whisper?.transcribe(
+                        audioData: chunk,
+                        language: language,
+                        translate: isTranslation
+                    ) ?? ""
+                    fullResult += chunkText
+                    Task { @MainActor in
+                        self.transcription += chunkText
                     }
-                ) ?? "Transcription failed"
+                }
 
                 await MainActor.run {
-                    self.transcription = result
+                    self.transcription = fullResult.isEmpty ? "Transcription failed" : fullResult
                     self.isTranscribing = false
                 }
             } catch {
