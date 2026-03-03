@@ -7,14 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E8F723B2F53AD6C00545C60 /* whisper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E8F72392F53AD6500545C60 /* whisper.framework */; };
+		1E8F723C2F53AD6C00545C60 /* whisper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1E8F72392F53AD6500545C60 /* whisper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1EB8F62A2F5370D400F66701 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EADD70D2F4B7A4D009C8298 /* Accelerate.framework */; };
 		1EB8F62D2F5370D600F66701 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EADD7092F4B7A34009C8298 /* AVFoundation.framework */; };
 		1EB8F62F2F5370D700F66701 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EADD70B2F4B7A46009C8298 /* Metal.framework */; };
-		1EB8F6312F5370D800F66701 /* whisper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E35A65F2F536EA700EBA613 /* whisper.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1E8F723D2F53AD6C00545C60 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1E8F723C2F53AD6C00545C60 /* whisper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1E35A65F2F536EA700EBA613 /* whisper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = whisper.framework; sourceTree = "<group>"; };
+		1E8F72392F53AD6500545C60 /* whisper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = whisper.framework; sourceTree = "<group>"; };
 		1EADD6E42F4B7606009C8298 /* americo-whisper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "americo-whisper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EADD7092F4B7A34009C8298 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1EADD70B2F4B7A46009C8298 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
@@ -37,7 +52,7 @@
 				1EB8F62D2F5370D600F66701 /* AVFoundation.framework in Frameworks */,
 				1EB8F62F2F5370D700F66701 /* Metal.framework in Frameworks */,
 				1EB8F62A2F5370D400F66701 /* Accelerate.framework in Frameworks */,
-				1EB8F6312F5370D800F66701 /* whisper.framework in Frameworks */,
+				1E8F723B2F53AD6C00545C60 /* whisper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +79,7 @@
 		1EADD7082F4B7A34009C8298 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1E35A65F2F536EA700EBA613 /* whisper.framework */,
+				1E8F72392F53AD6500545C60 /* whisper.framework */,
 				1EADD70D2F4B7A4D009C8298 /* Accelerate.framework */,
 				1EADD70B2F4B7A46009C8298 /* Metal.framework */,
 				1EADD7092F4B7A34009C8298 /* AVFoundation.framework */,
@@ -82,6 +97,7 @@
 				1EADD6E02F4B7606009C8298 /* Sources */,
 				1EADD6E12F4B7606009C8298 /* Frameworks */,
 				1EADD6E22F4B7606009C8298 /* Resources */,
+				1E8F723D2F53AD6C00545C60 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,7 +302,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "americo-whisper/americo-whisper.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -346,7 +362,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "americo-whisper/americo-whisper.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
