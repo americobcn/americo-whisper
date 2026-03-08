@@ -42,6 +42,13 @@ struct americo_whisperApp: App {
                     coordinator.shouldReloadModel = true
                 }
                 .keyboardShortcut("m", modifiers: [.command, .shift])
+                
+                Divider()
+                
+                Button("Save Text") {
+                    coordinator.shouldSaveTextToFile = true
+                }
+                .keyboardShortcut("s", modifiers: [.command])
             }
         }
     }

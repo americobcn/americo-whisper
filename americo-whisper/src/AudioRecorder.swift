@@ -6,33 +6,28 @@
 //
 
 import AVFoundation
-import Combine
 
-class AudioRecorder: NSObject, ObservableObject {
-    @Published var isRecording = false
-    @Published var audioSamples: [Float] = []
-    
+@MainActor @Observable
+class AudioRecorder: NSObject {
+    var isRecording = false
+    var audioSamples: [Float] = []
+
     private var audioEngine: AVAudioEngine?
 
-    func startRecording() {
-        // Request microphone permission
-        AVCaptureDevice.requestAccess(for: .audio) { granted in
-            guard granted else {
-                print("Microphone access denied")
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.setupAudioEngine()
-            }
+    func startRecording() async {
+        let granted = await AVCaptureDevice.requestAccess(for: .audio)
+        guard granted else {
+            print("Microphone access denied")
+            return
         }
+        setupAudioEngine()
     }
-    
+
     private func setupAudioEngine() {
         audioEngine = AVAudioEngine()
 
         guard let inputNode = audioEngine?.inputNode else { return }
-        
+
         // Whisper expects 16kHz mono
         let recordingFormat = AVAudioFormat(
             commonFormat: .pcmFormatFloat32,
@@ -40,9 +35,9 @@ class AudioRecorder: NSObject, ObservableObject {
             channels: 1,
             interleaved: false
         )
-        
+
         guard let recordingFormat = recordingFormat else { return }
-        
+
         inputNode.installTap(
             onBus: 0,
             bufferSize: 1024,
@@ -50,9 +45,9 @@ class AudioRecorder: NSObject, ObservableObject {
         ) { [weak self] buffer, _ in
             self?.processAudioBuffer(buffer)
         }
-        
+
         audioEngine?.prepare()
-        
+
         do {
             try audioEngine?.start()
             isRecording = true
@@ -60,20 +55,20 @@ class AudioRecorder: NSObject, ObservableObject {
             print("Failed to start audio engine: \(error)")
         }
     }
-    
+
     private func processAudioBuffer(_ buffer: AVAudioPCMBuffer) {
         guard let channelData = buffer.floatChannelData else { return }
-        
+
         let channelDataValue = channelData.pointee
         let channelDataValueArray = stride(
             from: 0,
             to: Int(buffer.frameLength),
             by: buffer.stride
         ).map { channelDataValue[$0] }
-        
+
         audioSamples.append(contentsOf: channelDataValueArray)
     }
-    
+
     @discardableResult
     func stopRecording() -> [Float] {
         audioEngine?.inputNode.removeTap(onBus: 0)
@@ -85,9 +80,4 @@ class AudioRecorder: NSObject, ObservableObject {
         return samples
     }
 
-    deinit {
-        if isRecording {
-            stopRecording()
-        }
-    }
 }

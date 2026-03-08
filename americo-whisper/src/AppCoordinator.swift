@@ -7,10 +7,11 @@
 
 import Foundation
 
-@Observable
+@MainActor @Observable
 class AppCoordinator {
     var shouldOpenFilePicker = false
     var shouldStartRecording = false
     var shouldReloadModel = false
     var shouldSelectModelsFolder = false
+    var shouldSaveTextToFile = false
 }
