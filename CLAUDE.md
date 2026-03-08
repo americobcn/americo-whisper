@@ -51,9 +51,9 @@ xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -destinati
 
 - **`WhisperState.swift`** — Core C interop wrapper. Manages an `OpaquePointer` to whisper context; calls `whisper_full`, `whisper_full_get_segment_text`, etc. This is the only file that crosses the Swift/C boundary.
 - **`AudioRecorder.swift`** — `ObservableObject` using `AVAudioEngine` for live mic capture; produces 16kHz mono float samples.
-- **`AudioFileReader.swift`** — Static async utilities for loading and converting audio files to 16kHz mono.
-- **`ModelManager.swift`** — Singleton; discovers model files on disk, persists selection in `UserDefaults`.
-- **`AppCoordinator.swift`** — `@Observable` navigation/state coordinator at the app level.
+- **`AudioFileReader.swift`** — Static utilities for loading and converting audio files to 16kHz mono Float32. `loadAudioInChunks` is the primary path for file transcription (streams 30s chunks); `readAudioFile` loads the whole file at once.
+- **`ModelManager.swift`** — Singleton; discovers `.bin` model files in a user-selected folder, persists the folder via security-scoped bookmark and the default model selection in `UserDefaults`.
+- **`AppCoordinator.swift`** — `@Observable` signal object; holds Bool trigger flags (`shouldOpenFilePicker`, `shouldStartRecording`, etc.) that `ContentView` observes via `onChange` to bridge menu commands to view actions.
 
 ### C/C++ Integration
 
@@ -65,6 +65,8 @@ Pre-built static libs in `WhisperCpp/lib/`:
 - `libwhisper.coreml.a` — CoreML support
 
 Use `OpaquePointer` for C struct handles and `withUnsafeBufferPointer` when passing arrays to C functions.
+
+`WhisperState.transcribe` is synchronous — always call it from `Task.detached(priority: .userInitiated)`. Long audio is split into 30s chunks internally (`chunkSamples = 30 × 16_000`); for file input, chunking happens at the `AudioFileReader` level instead.
 
 ## Code Style
 
@@ -96,6 +98,15 @@ Prefer Swift Concurrency (`async/await`, `@MainActor`, `Task`) over `DispatchQue
 - `@StateObject` for view-owned `ObservableObject` instances
 - `@Observable` + `@Bindable` for newer coordinator-style classes
 - `@Published` on all `ObservableObject` properties that drive UI
+
+### Menu Commands (defined in `americo_whisperApp.swift`)
+
+| Action | Shortcut |
+|---|---|
+| Open Audio File | ⌘O |
+| Select Models Folder | ⌘⇧O |
+| Start/Stop Recording | ⌘R |
+| Reload Model | ⌘⇧M |
 
 ## Testing Conventions
 

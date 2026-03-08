@@ -5,7 +5,7 @@
 //  Created by Americo Cot on 22/2/26.
 //
 
-import AVFoundation
+@preconcurrency import AVFoundation
 import Foundation
 
 enum AudioFileError: LocalizedError {
@@ -38,7 +38,7 @@ struct AudioFileReader {
     
     static func readAudioFile(from url: URL) async throws -> [Float] {
         try await Task.detached(priority: .userInitiated) {
-            try Self.loadAudioFileSync(from: url)
+            try await Self.loadAudioFileSync(from: url)
         }.value
     }
     

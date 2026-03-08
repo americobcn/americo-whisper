@@ -30,6 +30,7 @@ struct ContentView: View {
     @State private var showModelPicker = false
     @State private var mode: TranscriptionMode = .transcribe
     @State private var showModePicker = false
+    @State private var isHovered = false
     
     var body: some View {
         VStack(spacing: 20) {
@@ -97,6 +98,35 @@ struct ContentView: View {
                 coordinator.shouldSelectModelsFolder = false
                 selectModelsFolder()
             }
+        }
+          
+        Divider()
+        
+        HStack {
+            Spacer()
+            Button("Save", action: saveText)
+                .frame(width: 50, height: 40)
+                .buttonStyle(.borderless)
+                .foregroundColor(isHovered ? .blue : .white)
+                .background(isHovered ? Color.blue.opacity(0.1) : Color.clear)
+                .cornerRadius(8)
+                .onHover(perform: { isHovering in
+                    isHovered = isHovering
+                })
+        }
+    }
+    
+    private func saveText() {
+        print("Saving Text")
+        let fileName = "transcription_\(Date().timeIntervalSince1970).txt"
+        let fileURL = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
+        if transcription.isEmpty { return }
+        do {
+            try transcription.write(to: fileURL, atomically: true, encoding: .utf8)
+            print("Text saved to \(fileURL)")
+        } catch {
+            let alert = NSAlert(error: error)
+            alert.runModal()
         }
     }
     
@@ -417,7 +447,7 @@ struct ContentView: View {
             
             Task.detached(priority: .userInitiated) {
                 let result = await Task.detached(priority: .userInitiated) {
-                    whisper?.transcribe(
+                    await whisper?.transcribe(
                         audioData: audioSamples,
                         language: language,
                         translate: isTranslation
