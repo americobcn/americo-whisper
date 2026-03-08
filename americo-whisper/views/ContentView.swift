@@ -11,6 +11,8 @@ import UniformTypeIdentifiers
 
 struct ContentView: View {
     @State private var recorder = AudioRecorder()
+    @State private var systemCapture = SystemAudioCapture()
+    @State private var audioSource: AudioSource = .microphone
     @Bindable var coordinator: AppCoordinator
     @State private var transcription: TextDocument = TextDocument()
     @State private var isTranscribing = false
@@ -23,7 +25,9 @@ struct ContentView: View {
     @State private var selectedModel: ModelInfo?
     @State private var mode: TranscriptionMode = .transcribe
     @State private var isHovered = false
-    
+    @State private var captureTimer: Timer?
+    @State private var isChunkTranscribing = false
+
     // Replaces inline Binding(get:set:) in view body
     private var modelBinding: Binding<ModelInfo?> {
         Binding(
@@ -53,9 +57,10 @@ struct ContentView: View {
             AudioDropZone(isDraggingOver: $isDraggingOver, onFileDropped: handleDroppedFile)
 
             RecordingControls(
-                isRecording: recorder.isRecording,
+                isRecording: recorder.isRecording || systemCapture.isCapturing,
                 isTranscribing: isTranscribing,
-                onToggle: toggleRecording
+                onToggle: toggleRecording,
+                audioSource: $audioSource
             )
 
             if let errorMessage = errorMessage {
@@ -224,14 +229,35 @@ struct ContentView: View {
         }
     }
 
+    private func transcribeChunk(_ samples: [Float]) async {
+        guard !samples.isEmpty else { return }
+        let language = selectedLanguage.code
+        let isTranslation = mode == .translate
+        let whisper = whisperState
+        let text = await Task.detached(priority: .userInitiated) {
+            await whisper?.transcribe(audioData: samples, language: language, translate: isTranslation) ?? ""
+        }.value
+        transcription.text += text
+    }
+
     private func toggleRecording() {
-        guard whisperState != nil || recorder.isRecording else {
+        let isCurrentlyRecording = audioSource == .microphone
+            ? recorder.isRecording
+            : systemCapture.isCapturing
+
+        guard whisperState != nil || isCurrentlyRecording else {
             errorMessage = "Please select a model first."
             return
         }
 
-        if recorder.isRecording {
-            let audioSamples = recorder.stopRecording()
+        if isCurrentlyRecording {
+            if audioSource == .systemAudio {
+                captureTimer?.invalidate()
+                captureTimer = nil
+            }
+            let audioSamples = audioSource == .microphone
+                ? recorder.stopRecording()
+                : systemCapture.stopCapturing()
             currentFileName = nil
             isTranscribing = true
 
@@ -239,24 +265,49 @@ struct ContentView: View {
             let isTranslation = mode == .translate
             let whisper = whisperState
 
+            let isSystemAudio = audioSource == .systemAudio
             Task.detached(priority: .userInitiated) {
                 let result = await Task.detached(priority: .userInitiated) {
                     await whisper?.transcribe(
                         audioData: audioSamples,
                         language: language,
                         translate: isTranslation
-                    ) ?? "Transcription failed"
+                    ) ?? ""
                 }.value
 
                 await MainActor.run {
-                    self.transcription.text = result
+                    if isSystemAudio {
+                        self.transcription.text += result
+                    } else {
+                        self.transcription.text = result.isEmpty ? "Transcription failed" : result
+                    }
                     self.isTranscribing = false
                 }
             }
         } else {
             transcription.text = ""
             errorMessage = nil
-            Task { await recorder.startRecording() }
+            if audioSource == .microphone {
+                Task { await recorder.startRecording() }
+            } else {
+                Task {
+                    do {
+                        try await systemCapture.startCapturing()
+                        captureTimer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { [self] _ in
+                            Task { @MainActor in
+                                guard !isChunkTranscribing else { return }
+                                isChunkTranscribing = true
+                                await transcribeChunk(systemCapture.drainSamples())
+                                isChunkTranscribing = false
+                            }
+                        }
+                    } catch {
+                        await MainActor.run {
+                            errorMessage = error.localizedDescription
+                        }
+                    }
+                }
+            }
         }
     }
 

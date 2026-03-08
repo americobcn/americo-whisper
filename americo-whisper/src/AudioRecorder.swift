@@ -5,7 +5,7 @@
 //  Created by Americo Cot on 22/2/26.
 //
 
-import AVFoundation
+@preconcurrency import AVFoundation
 
 @MainActor @Observable
 class AudioRecorder: NSObject {
@@ -13,6 +13,12 @@ class AudioRecorder: NSObject {
     var audioSamples: [Float] = []
 
     private var audioEngine: AVAudioEngine?
+    private let targetFormat = AVAudioFormat(
+        commonFormat: .pcmFormatFloat32,
+        sampleRate: 16000,
+        channels: 1,
+        interleaved: false
+    )!
 
     func startRecording() async {
         let granted = await AVCaptureDevice.requestAccess(for: .audio)
@@ -24,55 +30,63 @@ class AudioRecorder: NSObject {
     }
 
     private func setupAudioEngine() {
-        audioEngine = AVAudioEngine()
+        let engine = AVAudioEngine()
+        audioEngine = engine
 
-        guard let inputNode = audioEngine?.inputNode else { return }
+        let inputNode = engine.inputNode
+        let hwFormat = inputNode.outputFormat(forBus: 0)
 
-        // Whisper expects 16kHz mono
-        let recordingFormat = AVAudioFormat(
-            commonFormat: .pcmFormatFloat32,
-            sampleRate: 16000,
-            channels: 1,
-            interleaved: false
-        )
-
-        guard let recordingFormat = recordingFormat else { return }
-
-        inputNode.installTap(
-            onBus: 0,
-            bufferSize: 1024,
-            format: recordingFormat
-        ) { [weak self] buffer, _ in
-            self?.processAudioBuffer(buffer)
+        guard let converter = AVAudioConverter(from: hwFormat, to: targetFormat) else {
+            print("Failed to create audio converter")
+            return
         }
 
-        audioEngine?.prepare()
+        let targetFmt = self.targetFormat
+
+        inputNode.installTap(onBus: 0, bufferSize: 4096, format: hwFormat) { [weak self] buffer, _ in
+            let frameCapacity = AVAudioFrameCount(
+                Double(buffer.frameLength) * targetFmt.sampleRate / hwFormat.sampleRate
+            ) + 256
+
+            guard let outputBuffer = AVAudioPCMBuffer(
+                pcmFormat: targetFmt,
+                frameCapacity: frameCapacity
+            ) else { return }
+
+            var error: NSError?
+            var hasProvided = false
+            converter.convert(to: outputBuffer, error: &error) { _, outStatus in
+                if hasProvided {
+                    outStatus.pointee = .noDataNow
+                    return nil
+                }
+                hasProvided = true
+                outStatus.pointee = .haveData
+                return buffer
+            }
+
+            guard let self,
+                  let channelData = outputBuffer.floatChannelData,
+                  outputBuffer.frameLength > 0 else { return }
+            let samples = Array(UnsafeBufferPointer(start: channelData[0], count: Int(outputBuffer.frameLength)))
+            self.audioSamples.append(contentsOf: samples)
+        }
+
+        engine.prepare()
 
         do {
-            try audioEngine?.start()
+            try engine.start()
             isRecording = true
         } catch {
             print("Failed to start audio engine: \(error)")
         }
     }
 
-    private func processAudioBuffer(_ buffer: AVAudioPCMBuffer) {
-        guard let channelData = buffer.floatChannelData else { return }
-
-        let channelDataValue = channelData.pointee
-        let channelDataValueArray = stride(
-            from: 0,
-            to: Int(buffer.frameLength),
-            by: buffer.stride
-        ).map { channelDataValue[$0] }
-
-        audioSamples.append(contentsOf: channelDataValueArray)
-    }
-
     @discardableResult
     func stopRecording() -> [Float] {
         audioEngine?.inputNode.removeTap(onBus: 0)
         audioEngine?.stop()
+        audioEngine = nil
         isRecording = false
 
         let samples = audioSamples
