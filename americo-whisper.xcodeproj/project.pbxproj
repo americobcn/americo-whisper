@@ -30,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1E8F72392F53AD6500545C60 /* whisper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = whisper.framework; sourceTree = "<group>"; };
-		1EADD6E42F4B7606009C8298 /* americo-whisper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "americo-whisper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EADD6E42F4B7606009C8298 /* Américo's Whisper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Américo's Whisper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EADD7092F4B7A34009C8298 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1EADD70B2F4B7A46009C8298 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		1EADD70D2F4B7A4D009C8298 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -84,7 +84,7 @@
 		1EADD6E52F4B7606009C8298 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1EADD6E42F4B7606009C8298 /* americo-whisper.app */,
+				1EADD6E42F4B7606009C8298 /* Américo's Whisper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,7 +123,7 @@
 			packageProductDependencies = (
 			);
 			productName = "americo-whisper";
-			productReference = 1EADD6E42F4B7606009C8298 /* americo-whisper.app */;
+			productReference = 1EADD6E42F4B7606009C8298 /* Américo's Whisper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -342,16 +342,19 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "americo-whisper/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Américo's Whisper";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Américo";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.americobcn.americo-whisper";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Américo's Whisper";
 				REGISTER_APP_GROUPS = YES;
 				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
 				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
@@ -405,16 +408,19 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "americo-whisper/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Américo's Whisper";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Américo";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.americobcn.americo-whisper";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Américo's Whisper";
 				REGISTER_APP_GROUPS = YES;
 				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
 				RUNTIME_EXCEPTION_ALLOW_JIT = NO;

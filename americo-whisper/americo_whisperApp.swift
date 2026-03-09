@@ -14,6 +14,7 @@ struct americo_whisperApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(coordinator: coordinator)
+                .navigationTitle("Américo's Whisper")
         }
         .commands {
             CommandGroup(replacing: .newItem) {

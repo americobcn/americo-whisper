@@ -41,11 +41,11 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Whisper Transcription")
-                .font(.largeTitle)
+            // Text("Américo's Whisper")
+            //     .font(.largeTitle)
 
-            Divider()
-                .frame(width: 200)
+            // Divider()
+            //     .frame(width: 200)
 
             LanguageModelToolbar(
                 selectedLanguage: $selectedLanguage,
