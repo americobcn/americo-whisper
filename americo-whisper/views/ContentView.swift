@@ -12,7 +12,8 @@ import UniformTypeIdentifiers
 struct ContentView: View {
     @State private var recorder = AudioRecorder()
     @State private var systemCapture = SystemAudioCapture()
-    @State private var audioSource: AudioSource = .microphone
+    @State private var audioSource: AudioSource = .systemAudio
+    @State private var availableSources: [AudioSource] = [.systemAudio]
     @Bindable var coordinator: AppCoordinator
     @State private var transcription: TextDocument = TextDocument()
     @State private var isTranscribing = false
@@ -51,16 +52,22 @@ struct ContentView: View {
                 availableModels: availableModels,
                 selectedModel: modelBinding,
                 mode: $mode,
-                onSetDefaultModel: { ModelManager.shared.setDefaultModel($0) }
+                onSetDefaultModel: { ModelManager.shared.setDefaultModel($0) },
+                availableSources: availableSources,
+                selectedSource: $audioSource,
+                isRecording: recorder.isRecording || systemCapture.isCapturing,
+                isTranscribing: isTranscribing
             )
 
             AudioDropZone(isDraggingOver: $isDraggingOver, onFileDropped: handleDroppedFile)
-
+            
+            Divider()
+                .frame(width: 200)
+            
             RecordingControls(
                 isRecording: recorder.isRecording || systemCapture.isCapturing,
                 isTranscribing: isTranscribing,
-                onToggle: toggleRecording,
-                audioSource: $audioSource
+                onToggle: toggleRecording
             )
 
             if let errorMessage = errorMessage {
@@ -79,7 +86,7 @@ struct ContentView: View {
                     }
                 }
             }
-
+            
             Spacer()
 
             TranscriptionOutputView(transcription: transcription.text)
@@ -164,6 +171,9 @@ struct ContentView: View {
  private func loadModels() {
         ModelManager.shared.resolveBookmark()
 
+        let devices = AudioSource.enumerateInputDevices()
+        availableSources = [.systemAudio] + devices
+
         guard ModelManager.shared.isModelsFolderConfigured else {
             selectModelsFolder()
             return
@@ -241,9 +251,11 @@ struct ContentView: View {
     }
 
     private func toggleRecording() {
-        let isCurrentlyRecording = audioSource == .microphone
-            ? recorder.isRecording
-            : systemCapture.isCapturing
+        let isCurrentlyRecording: Bool
+        switch audioSource {
+        case .systemAudio: isCurrentlyRecording = systemCapture.isCapturing
+        case .inputDevice: isCurrentlyRecording = recorder.isRecording
+        }
 
         guard whisperState != nil || isCurrentlyRecording else {
             errorMessage = "Please select a model first."
@@ -251,13 +263,16 @@ struct ContentView: View {
         }
 
         if isCurrentlyRecording {
-            if audioSource == .systemAudio {
+            if case .systemAudio = audioSource {
                 captureTimer?.invalidate()
                 captureTimer = nil
             }
-            let audioSamples = audioSource == .microphone
-                ? recorder.stopRecording()
-                : systemCapture.stopCapturing()
+            let audioSamples: [Float]
+            if case .systemAudio = audioSource {
+                audioSamples = systemCapture.stopCapturing()
+            } else {
+                audioSamples = recorder.stopRecording()
+            }
             currentFileName = nil
             isTranscribing = true
 
@@ -265,7 +280,8 @@ struct ContentView: View {
             let isTranslation = mode == .translate
             let whisper = whisperState
 
-            let isSystemAudio = audioSource == .systemAudio
+            let isSystemAudio: Bool
+            if case .systemAudio = audioSource { isSystemAudio = true } else { isSystemAudio = false }
             Task.detached(priority: .userInitiated) {
                 let result = await Task.detached(priority: .userInitiated) {
                     await whisper?.transcribe(
@@ -287,9 +303,10 @@ struct ContentView: View {
         } else {
             transcription.text = ""
             errorMessage = nil
-            if audioSource == .microphone {
-                Task { await recorder.startRecording() }
-            } else {
+            switch audioSource {
+            case .inputDevice(let uid, _):
+                Task { await recorder.startRecording(deviceUID: uid) }
+            case .systemAudio:
                 Task {
                     do {
                         try await systemCapture.startCapturing()

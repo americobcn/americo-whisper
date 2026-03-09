@@ -6,6 +6,7 @@
 //
 
 @preconcurrency import AVFoundation
+import CoreAudio
 
 @MainActor @Observable
 class AudioRecorder: NSObject {
@@ -20,18 +21,22 @@ class AudioRecorder: NSObject {
         interleaved: false
     )!
 
-    func startRecording() async {
+    func startRecording(deviceUID: String? = nil) async {
         let granted = await AVCaptureDevice.requestAccess(for: .audio)
         guard granted else {
             print("Microphone access denied")
             return
         }
-        setupAudioEngine()
+        setupAudioEngine(deviceUID: deviceUID)
     }
 
-    private func setupAudioEngine() {
+    private func setupAudioEngine(deviceUID: String? = nil) {
         let engine = AVAudioEngine()
         audioEngine = engine
+
+        if let uid = deviceUID {
+            setInputDevice(uid: uid, on: engine)
+        }
 
         let inputNode = engine.inputNode
         let hwFormat = inputNode.outputFormat(forBus: 0)
@@ -80,6 +85,29 @@ class AudioRecorder: NSObject {
         } catch {
             print("Failed to start audio engine: \(error)")
         }
+    }
+
+    private func setInputDevice(uid: String, on engine: AVAudioEngine) {
+        var cfUID = uid as CFString
+        var address = AudioObjectPropertyAddress(
+            mSelector: kAudioHardwarePropertyDeviceForUID,
+            mScope: kAudioObjectPropertyScopeGlobal,
+            mElement: kAudioObjectPropertyElementMain
+        )
+        var deviceID = AudioDeviceID(0)
+        var size = UInt32(MemoryLayout<AudioDeviceID>.size)
+        AudioObjectGetPropertyData(
+            AudioObjectID(kAudioObjectSystemObject),
+            &address, UInt32(MemoryLayout<CFString>.size), &cfUID,
+            &size, &deviceID
+        )
+        guard deviceID != 0, let audioUnit = engine.inputNode.audioUnit else { return }
+        AudioUnitSetProperty(
+            audioUnit,
+            kAudioOutputUnitProperty_CurrentDevice,
+            kAudioUnitScope_Global, 0,
+            &deviceID, UInt32(MemoryLayout<AudioDeviceID>.size)
+        )
     }
 
     @discardableResult

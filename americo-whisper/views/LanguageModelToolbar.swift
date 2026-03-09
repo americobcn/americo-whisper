@@ -13,16 +13,22 @@ struct LanguageModelToolbar: View {
     @Binding var selectedModel: ModelInfo?
     @Binding var mode: TranscriptionMode
     let onSetDefaultModel: (ModelInfo) -> Void
+    let availableSources: [AudioSource]
+    @Binding var selectedSource: AudioSource
+    let isRecording: Bool
+    let isTranscribing: Bool
 
     @State private var showLanguagePicker = false
     @State private var showModelPicker = false
     @State private var showModePicker = false
+    @State private var showSourcePicker = false
 
     var body: some View {
         HStack(spacing: 30) {
             languageSection
             modelSection
             modeSection
+            sourceSection
         }
     }
 
@@ -126,6 +132,51 @@ struct LanguageModelToolbar: View {
                 }
                 .padding()
                 .frame(width: 150)
+            }
+        }
+    }
+
+    private var sourceSection: some View {
+        VStack {
+            Text("Source:")
+                .font(.headline)
+
+            Button(action: { showSourcePicker = true }) {
+                HStack {
+                    Image(systemName: "mic")
+                    Text(selectedSource.displayName)
+                    Image(systemName: "chevron.down")
+                        .font(.caption)
+                }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Color.gray.opacity(0.1))
+                .clipShape(.rect(cornerRadius: 6))
+            }
+            .buttonStyle(.plain)
+            .disabled(isRecording || isTranscribing)
+            .popover(isPresented: $showSourcePicker, arrowEdge: .bottom) {
+                VStack(spacing: 2) {
+                    ForEach(availableSources) { source in
+                        Button(action: {
+                            selectedSource = source
+                            showSourcePicker = false
+                        }) {
+                            HStack {
+                                Text(source.displayName)
+                                Spacer()
+                                if selectedSource == source {
+                                    Image(systemName: "checkmark")
+                                }
+                            }
+                            .contentShape(Rectangle())
+                            .padding(.vertical, 6)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding()
+                .frame(width: 200)
             }
         }
     }
