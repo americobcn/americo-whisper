@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1EADD6E32F4B7606009C8298"
-               BuildableName = "americo-whisper.app"
+               BuildableName = "Ame&#x301;rico&apos;s Whisper.app"
                BlueprintName = "americo-whisper"
                ReferencedContainer = "container:americo-whisper.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1EADD6E32F4B7606009C8298"
-            BuildableName = "americo-whisper.app"
+            BuildableName = "Ame&#x301;rico&apos;s Whisper.app"
             BlueprintName = "americo-whisper"
             ReferencedContainer = "container:americo-whisper.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1EADD6E32F4B7606009C8298"
-            BuildableName = "americo-whisper.app"
+            BuildableName = "Ame&#x301;rico&apos;s Whisper.app"
             BlueprintName = "americo-whisper"
             ReferencedContainer = "container:americo-whisper.xcodeproj">
          </BuildableReference>
