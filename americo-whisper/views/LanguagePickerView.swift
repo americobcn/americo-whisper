@@ -25,12 +25,12 @@ struct LanguagePickerView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            SearchField(searchText: $searchText)
+            LanguageSearchField(searchText: $searchText)
                 .padding()
 
             Divider()
 
-            LanguageList(
+            LanguageListView(
                 filteredLanguages: filteredLanguages,
                 selectedLanguage: $selectedLanguage,
                 onDismiss: { dismiss() }
@@ -45,104 +45,3 @@ struct LanguagePickerView: View {
     }
 }
 
-private struct SearchField: View {
-    @Binding var searchText: String
-
-    var body: some View {
-        HStack {
-            Image(systemName: "magnifyingglass")
-                .foregroundStyle(.secondary)
-                .accessibilityHidden(true)
-
-            TextField("Search languages...", text: $searchText)
-                .textFieldStyle(.plain)
-
-            if !searchText.isEmpty {
-                Button("Clear search", systemImage: "xmark.circle.fill", action: { searchText = "" })
-                    .labelStyle(.iconOnly)
-                    .buttonStyle(.plain)
-                    .foregroundStyle(.secondary)
-            }
-        }
-        .padding(8)
-        .background(Color.gray.opacity(0.1))
-        .clipShape(.rect(cornerRadius: 8))
-    }
-}
-
-private struct LanguageList: View {
-    let filteredLanguages: [WhisperLanguage]
-    @Binding var selectedLanguage: WhisperLanguage
-    let onDismiss: () -> Void
-
-    var body: some View {
-        ScrollView {
-            LazyVStack(alignment: .leading, spacing: 2) {
-                AutoDetectButton(selectedLanguage: $selectedLanguage, onDismiss: onDismiss)
-
-                if !filteredLanguages.isEmpty {
-                    Divider()
-                        .padding(.vertical, 4)
-                }
-
-                ForEach(filteredLanguages) { language in
-                    languageRow(language)
-                }
-            }
-            .padding()
-        }
-    }
-
-    private func languageRow(_ language: WhisperLanguage) -> some View {
-        Button(action: {
-            selectedLanguage = language
-            onDismiss()
-        }) {
-            HStack {
-                Text(language.displayName)
-                    .foregroundStyle(.primary)
-
-                Spacer()
-
-                if selectedLanguage.id == language.id {
-                    Image(systemName: "checkmark")
-                        .foregroundStyle(.blue)
-                }
-            }
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .padding(.vertical, 6)
-    }
-}
-
-private struct AutoDetectButton: View {
-    @Binding var selectedLanguage: WhisperLanguage
-    let onDismiss: () -> Void
-
-    var body: some View {
-        Button(action: {
-            selectedLanguage = .autoDetect
-            onDismiss()
-        }) {
-            HStack {
-                Image(systemName: "wand.and.stars")
-                    .frame(width: 24)
-                    .foregroundStyle(.blue)
-
-                Text(WhisperLanguage.autoDetect.name)
-                    .foregroundStyle(.primary)
-
-                Spacer()
-
-                if selectedLanguage.id == -1 {
-                    Image(systemName: "checkmark")
-                        .foregroundStyle(.blue)
-                }
-            }
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .padding(.vertical, 6)
-    }
-}

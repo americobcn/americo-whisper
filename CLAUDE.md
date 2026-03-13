@@ -4,10 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-macOS SwiftUI app that performs audio transcription using whisper.cpp. Supports real-time microphone recording and audio file loading, with language selection, model management, and translation mode.
+macOS SwiftUI app that performs audio transcription using whisper.cpp. Supports real-time microphone recording, system audio capture, and audio file loading, with language selection, model management, and translation mode.
 
 - **Target**: macOS 15.7+, Xcode 26.2+, Swift 5.0+
 - **Bundle ID**: `com.americobcn.americo-whisper`
+
+## Required Skills
+
+Always load these skills before writing code in this project:
+
+- **swiftui-pro** — for all SwiftUI code
+- **swift-concurrency-pro** — for all async/await, actors, `@MainActor`, and `Sendable` work
 
 ## Build Commands
 
@@ -40,19 +47,32 @@ xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -destinati
 
 ## Architecture
 
+### Source Layout
+
+```
+americo-whisper/
+├── src/          # Non-view logic (models, state, audio)
+└── views/        # SwiftUI views
+```
+
 ### Data Flow
 
-1. User records via mic (`AudioRecorder`) or loads a file (`AudioFileReader`)
-2. Both produce `[Float]` samples at 16kHz mono
-3. Samples passed to `WhisperState`, which calls whisper.cpp C functions via bridging header
-4. Results returned as `String` and displayed in `ContentView`
+1. User selects an `AudioSource` (mic input device or system audio) or loads a file
+2. **Mic/device**: `AudioRecorder` uses `AVAudioEngine`; **system audio**: `SystemAudioCapture` uses `ScreenCaptureKit`; **file**: `AudioFileReader`
+3. All paths produce `[Float]` samples at 16kHz mono
+4. Samples passed to `WhisperState`, which calls whisper.cpp C functions via bridging header
+5. Results returned as `String` and displayed in `ContentView`
 
 ### Key Components
 
 - **`WhisperState.swift`** — Core C interop wrapper. Manages an `OpaquePointer` to whisper context; calls `whisper_full`, `whisper_full_get_segment_text`, etc. This is the only file that crosses the Swift/C boundary.
-- **`AudioRecorder.swift`** — `ObservableObject` using `AVAudioEngine` for live mic capture; produces 16kHz mono float samples.
+- **`AudioRecorder.swift`** — `ObservableObject` using `AVAudioEngine` for live mic/device capture; produces 16kHz mono float samples.
+- **`SystemAudioCapture.swift`** — `@MainActor @Observable` class using `ScreenCaptureKit` to capture system audio. Requires Screen Recording permission. Uses `nonisolated(unsafe)` + `NSLock` for audio buffer access from the SCStream callback thread. Also registers a no-op screen output to silence internal SCStream errors.
+- **`AudioSource.swift`** — `enum AudioSource` unifying `.systemAudio` and `.inputDevice(uid:name:)`. Used to drive input source selection in the UI; `enumerateInputDevices()` queries `AVCaptureDevice`.
 - **`AudioFileReader.swift`** — Static utilities for loading and converting audio files to 16kHz mono Float32. `loadAudioInChunks` is the primary path for file transcription (streams 30s chunks); `readAudioFile` loads the whole file at once.
 - **`ModelManager.swift`** — Singleton; discovers `.bin` model files in a user-selected folder, persists the folder via security-scoped bookmark and the default model selection in `UserDefaults`.
+- **`ModelInfo.swift`** — Value type (`struct`) wrapping a model `.bin` filename; `name` strips the `.bin` extension for display.
+- **`TranscriptionMode.swift`** — Simple `enum` with `.transcribe` and `.translate` cases; passed to `WhisperState` to control whisper task mode.
 - **`AppCoordinator.swift`** — `@Observable` signal object; holds Bool trigger flags (`shouldOpenFilePicker`, `shouldStartRecording`, etc.) that `ContentView` observes via `onChange` to bridge menu commands to view actions.
 
 ### C/C++ Integration
@@ -60,6 +80,7 @@ xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -destinati
 Bridging header: `WhisperCpp/include/americo-whisper-Bridging-Header.h`
 
 Pre-built static libs in `WhisperCpp/lib/`:
+
 - `libwhisper.a` — transcription engine
 - `libggml-base.a`, `libggml-cpu.a`, `libggml-metal.a`, `libggml-blas.a` — GGML backends (Metal for GPU)
 - `libwhisper.coreml.a` — CoreML support
@@ -101,12 +122,12 @@ Prefer Swift Concurrency (`async/await`, `@MainActor`, `Task`) over `DispatchQue
 
 ### Menu Commands (defined in `americo_whisperApp.swift`)
 
-| Action | Shortcut |
-|---|---|
-| Open Audio File | ⌘O |
-| Select Models Folder | ⌘⇧O |
-| Start/Stop Recording | ⌘R |
-| Reload Model | ⌘⇧M |
+| Action               | Shortcut |
+| -------------------- | -------- |
+| Open Audio File      | ⌘O       |
+| Select Models Folder | ⌘⇧O      |
+| Start/Stop Recording | ⌘R       |
+| Reload Model         | ⌘⇧M      |
 
 ## Testing Conventions
 

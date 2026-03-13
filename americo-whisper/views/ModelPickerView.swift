@@ -24,7 +24,15 @@ struct ModelPickerView: View {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 2) {
                     ForEach(models) { model in
-                        modelRow(model)
+                        ModelRowView(
+                            model: model,
+                            selectedModel: $selectedModel,
+                            onSelect: { m in
+                                selectedModel = m
+                                onSetDefault(m)
+                            },
+                            onDismiss: { dismiss() }
+                        )
                     }
                 }
                 .padding()
@@ -33,32 +41,4 @@ struct ModelPickerView: View {
         .frame(width: 250, height: 300)
     }
     
-    private func modelRow(_ model: ModelInfo) -> some View {
-        HStack {
-            Button(action: {
-                selectedModel = model
-                onSetDefault(model)
-                dismiss()
-            }) {
-                HStack {
-                    Image(systemName: "brain")
-                        .frame(width: 20)
-                        .foregroundStyle(.secondary)
-                    
-                    Text(model.name)
-                        .foregroundStyle(.primary)
-                    
-                    Spacer()
-                    
-                    if selectedModel?.id == model.id {
-                        Image(systemName: "checkmark")
-                            .foregroundStyle(.blue)
-                    }
-                }
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-            .padding(.vertical, 6)
-        }
-    }
 }

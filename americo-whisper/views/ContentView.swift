@@ -29,28 +29,12 @@ struct ContentView: View {
     @State private var captureTimer: Timer?
     @State private var isChunkTranscribing = false
 
-    // Replaces inline Binding(get:set:) in view body
-    private var modelBinding: Binding<ModelInfo?> {
-        Binding(
-            get: { selectedModel },
-            set: { newModel in
-                if let newModel { selectModel(newModel) }
-            }
-        )
-    }
-
     var body: some View {
         VStack(spacing: 20) {
-            // Text("Américo's Whisper")
-            //     .font(.largeTitle)
-
-            // Divider()
-            //     .frame(width: 200)
-
             LanguageModelToolbar(
                 selectedLanguage: $selectedLanguage,
                 availableModels: availableModels,
-                selectedModel: modelBinding,
+                selectedModel: $selectedModel,
                 mode: $mode,
                 onSetDefaultModel: { ModelManager.shared.setDefaultModel($0) },
                 availableSources: availableSources,
@@ -70,7 +54,7 @@ struct ContentView: View {
                 onToggle: toggleRecording
             )
 
-            if let errorMessage = errorMessage {
+            if let errorMessage {
                 Text(errorMessage)
                     .foregroundStyle(.red)
                     .font(.callout)
@@ -131,15 +115,18 @@ struct ContentView: View {
                 saveText()
             }
         }
+        .onChange(of: selectedModel) { _, newModel in
+            if let newModel { selectModel(newModel) }
+        }
 
         Divider()
                     
         Button("Save Transcription", action: saveText)
             .frame(width: 100, height: 40)
             .buttonStyle(.borderless)
-            .foregroundColor(isHovered ? .blue : .white)
+            .foregroundStyle(isHovered ? Color.blue : Color.white)
             .background(isHovered ? Color.blue.opacity(0.1) : Color.clear)
-            .cornerRadius(8)
+            .clipShape(.rect(cornerRadius: 8))
             .onHover { isHovered = $0 }
         
     }
@@ -155,7 +142,7 @@ struct ContentView: View {
         savePanel.canCreateDirectories = true
         savePanel.isExtensionHidden = false
         savePanel.allowedContentTypes = [.plainText]
-        let fileName = "\(currentFileName ?? "")_\(Date().timeIntervalSince1970)"
+        let fileName = "\(currentFileName ?? "")_\(Date.now.timeIntervalSince1970)"
         savePanel.nameFieldStringValue = "\(fileName).txt"
         let resp = savePanel.runModal()
         if resp == .OK, let url = savePanel.url {
@@ -283,13 +270,11 @@ struct ContentView: View {
             let isSystemAudio: Bool
             if case .systemAudio = audioSource { isSystemAudio = true } else { isSystemAudio = false }
             Task.detached(priority: .userInitiated) {
-                let result = await Task.detached(priority: .userInitiated) {
-                    await whisper?.transcribe(
-                        audioData: audioSamples,
-                        language: language,
-                        translate: isTranslation
-                    ) ?? ""
-                }.value
+                let result = await whisper?.transcribe(
+                    audioData: audioSamples,
+                    language: language,
+                    translate: isTranslation
+                ) ?? ""
 
                 await MainActor.run {
                     if isSystemAudio {
@@ -392,26 +377,3 @@ struct ContentView: View {
     }
 }
 
-struct TextDocument: FileDocument {
-    static var readableContentTypes: [UTType] = [.plainText]
-    static var writableContentTypes: [UTType] = [.plainText]
-
-    var text: String
-
-    init(text: String = "") {
-        self.text = text
-    }
-
-    init(configuration: ReadConfiguration) throws {
-        if let data = configuration.file.regularFileContents {
-            self.text = String(decoding: data, as: UTF8.self)
-        } else {
-            self.text = ""
-        }
-    }
-
-    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        let data = Data(text.utf8)
-        return FileWrapper(regularFileWithContents: data)
-    }
-}

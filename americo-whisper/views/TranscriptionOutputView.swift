@@ -24,7 +24,7 @@ struct TranscriptionOutputView: View {
                     .padding()
                     .foregroundStyle(transcription.isEmpty ? .tertiary : .primary)
                     .textSelection(.enabled)
-                    .font(.system(size: 14))
+                    .font(.body)
             }
             .frame(maxHeight: .infinity)
             .background(Color.gray.opacity(0.1))
