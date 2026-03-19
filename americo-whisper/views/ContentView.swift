@@ -17,6 +17,7 @@ struct ContentView: View {
     @Bindable var coordinator: AppCoordinator
     @State private var transcription: TextDocument = TextDocument()
     @State private var isTranscribing = false
+    @State private var isLoadingModel = false
     @State private var whisperState: WhisperState?
     @State private var currentFileName: String?
     @State private var errorMessage: String?
@@ -40,7 +41,7 @@ struct ContentView: View {
                 availableSources: availableSources,
                 selectedSource: $audioSource,
                 isRecording: recorder.isRecording || systemCapture.isCapturing,
-                isTranscribing: isTranscribing
+                isTranscribing: isTranscribing || isLoadingModel
             )
 
             AudioDropZone(isDraggingOver: $isDraggingOver, onFileDropped: handleDroppedFile)
@@ -50,7 +51,7 @@ struct ContentView: View {
             
             RecordingControls(
                 isRecording: recorder.isRecording || systemCapture.isCapturing,
-                isTranscribing: isTranscribing,
+                isTranscribing: isTranscribing || isLoadingModel,
                 onToggle: toggleRecording
             )
 
@@ -58,6 +59,13 @@ struct ContentView: View {
                 Text(errorMessage)
                     .foregroundStyle(.red)
                     .font(.callout)
+            }
+
+            if isLoadingModel {
+                HStack {
+                    ProgressView()
+                    Text("Loading model...")
+                }
             }
 
             if isTranscribing {
@@ -116,7 +124,7 @@ struct ContentView: View {
             }
         }
         .onChange(of: selectedModel) { _, newModel in
-            if let newModel { selectModel(newModel) }
+            if let newModel { loadModel(newModel) }
         }
 
         Divider()
@@ -174,9 +182,9 @@ struct ContentView: View {
         }
 
         if availableModels.count == 1 {
-            selectModel(availableModels[0])
+            selectedModel = availableModels[0]
         } else if let defaultModel = ModelManager.shared.getDefaultModel() {
-            selectModel(defaultModel)
+            selectedModel = defaultModel
         }
         // Multiple models with no saved default: leave selectedModel nil; user picks from UI
     }
@@ -197,9 +205,8 @@ struct ContentView: View {
         }
     }
 
-    private func selectModel(_ model: ModelInfo) {
-        guard !isTranscribing else { return }
-        selectedModel = model
+    private func loadModel(_ model: ModelInfo) {
+        guard !isTranscribing, !isLoadingModel else { return }
 
         guard let modelPath = ModelManager.shared.modelPath(for: model) else {
             errorMessage = "Model file not found: \(model.fileName)"
@@ -208,21 +215,26 @@ struct ContentView: View {
 
         whisperState?.cleanup()
         whisperState = nil
+        isLoadingModel = true
+        errorMessage = nil
 
-        whisperState = WhisperState(modelPath: modelPath)
-
-        if whisperState == nil {
-            errorMessage = "Failed to load model: \(model.name)"
-        } else {
-            errorMessage = nil
+        Task.detached(priority: .userInitiated) {
+            let newState = WhisperState(modelPath: modelPath)
+            await MainActor.run {
+                self.whisperState = newState
+                self.isLoadingModel = false
+                if newState == nil {
+                    self.errorMessage = "Failed to load model: \(model.name)"
+                }
+            }
         }
     }
 
     private func reloadCurrentModel() {
         if let model = selectedModel {
-            selectModel(model)
+            loadModel(model)
         } else if let firstModel = availableModels.first {
-            selectModel(firstModel)
+            selectedModel = firstModel
         }
     }
 
@@ -244,6 +256,7 @@ struct ContentView: View {
         case .inputDevice: isCurrentlyRecording = recorder.isRecording
         }
 
+        guard !isLoadingModel else { return }
         guard whisperState != nil || isCurrentlyRecording else {
             errorMessage = "Please select a model first."
             return
@@ -326,6 +339,7 @@ struct ContentView: View {
     }
 
     private func handleDroppedFile(url: URL) {
+        guard !isLoadingModel else { return }
         guard whisperState != nil else {
             errorMessage = "Please select a model first."
             return
