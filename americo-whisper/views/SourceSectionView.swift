@@ -13,6 +13,7 @@ struct SourceSectionView: View {
     let isRecording: Bool
     let isTranscribing: Bool
     @State private var showSourcePicker = false
+    @State private var focusedIndex: Int?
 
     var body: some View {
         VStack {
@@ -35,7 +36,7 @@ struct SourceSectionView: View {
             .disabled(isRecording || isTranscribing)
             .popover(isPresented: $showSourcePicker, arrowEdge: .bottom) {
                 VStack(spacing: 2) {
-                    ForEach(availableSources) { source in
+                    ForEach(Array(availableSources.enumerated()), id: \.element.id) { index, source in
                         Button(action: {
                             selectedSource = source
                             showSourcePicker = false
@@ -47,6 +48,8 @@ struct SourceSectionView: View {
                                     Image(systemName: "checkmark")
                                 }
                             }
+                            .background(focusedIndex == index ? Color.accentColor.opacity(0.15) : .clear)
+                            .clipShape(.rect(cornerRadius: 4))
                             .contentShape(Rectangle())
                             .padding(.vertical, 6)
                         }
@@ -55,6 +58,26 @@ struct SourceSectionView: View {
                 }
                 .padding()
                 .frame(width: 200)
+                .focusable()
+                .focusEffectDisabled()
+                .onAppear {
+                    focusedIndex = availableSources.firstIndex(of: selectedSource)
+                }
+                .onKeyPress(.downArrow) {
+                    focusedIndex = min((focusedIndex ?? -1) + 1, availableSources.count - 1)
+                    return .handled
+                }
+                .onKeyPress(.upArrow) {
+                    focusedIndex = max((focusedIndex ?? 0) - 1, 0)
+                    return .handled
+                }
+                .onKeyPress(.return) {
+                    if let index = focusedIndex, availableSources.indices.contains(index) {
+                        selectedSource = availableSources[index]
+                        showSourcePicker = false
+                    }
+                    return .handled
+                }
             }
         }
     }

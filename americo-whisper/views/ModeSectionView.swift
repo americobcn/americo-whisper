@@ -10,6 +10,7 @@ import SwiftUI
 struct ModeSectionView: View {
     @Binding var mode: TranscriptionMode
     @State private var showModePicker = false
+    @State private var focusedIndex: Int?
 
     var body: some View {
         VStack {
@@ -30,8 +31,9 @@ struct ModeSectionView: View {
             }
             .buttonStyle(.plain)
             .popover(isPresented: $showModePicker, arrowEdge: .bottom) {
+                let cases = TranscriptionMode.allCases
                 VStack(spacing: 2) {
-                    ForEach(TranscriptionMode.allCases, id: \.self) { modeOption in
+                    ForEach(Array(cases.enumerated()), id: \.element) { index, modeOption in
                         Button(action: {
                             mode = modeOption
                             showModePicker = false
@@ -44,6 +46,8 @@ struct ModeSectionView: View {
                                     Image(systemName: "checkmark")
                                 }
                             }
+                            .background(focusedIndex == index ? Color.accentColor.opacity(0.15) : .clear)
+                            .clipShape(.rect(cornerRadius: 4))
                             .contentShape(Rectangle())
                             .padding(.vertical, 6)
                         }
@@ -52,6 +56,26 @@ struct ModeSectionView: View {
                 }
                 .padding()
                 .frame(width: 150)
+                .focusable()
+                .focusEffectDisabled()
+                .onAppear {
+                    focusedIndex = cases.firstIndex(of: mode)
+                }
+                .onKeyPress(.downArrow) {
+                    focusedIndex = min((focusedIndex ?? -1) + 1, cases.count - 1)
+                    return .handled
+                }
+                .onKeyPress(.upArrow) {
+                    focusedIndex = max((focusedIndex ?? 0) - 1, 0)
+                    return .handled
+                }
+                .onKeyPress(.return) {
+                    if let index = focusedIndex, cases.indices.contains(index) {
+                        mode = cases[index]
+                        showModePicker = false
+                    }
+                    return .handled
+                }
             }
         }
     }

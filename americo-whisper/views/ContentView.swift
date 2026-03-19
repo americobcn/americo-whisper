@@ -121,7 +121,7 @@ struct ContentView: View {
             if newValue {
                 coordinator.shouldSaveTextToFile = false
                 saveText()
-            }
+            }   
         }
         .onChange(of: selectedModel) { _, newModel in
             if let newModel { loadModel(newModel) }

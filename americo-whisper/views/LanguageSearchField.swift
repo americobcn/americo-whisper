@@ -9,6 +9,9 @@ import SwiftUI
 
 struct LanguageSearchField: View {
     @Binding var searchText: String
+    var onArrowUp: () -> Void = {}
+    var onArrowDown: () -> Void = {}
+    var onConfirm: () -> Void = {}
 
     var body: some View {
         HStack {
@@ -18,6 +21,9 @@ struct LanguageSearchField: View {
 
             TextField("Search languages...", text: $searchText)
                 .textFieldStyle(.plain)
+                .onKeyPress(.downArrow) { onArrowDown(); return .handled }
+                .onKeyPress(.upArrow) { onArrowUp(); return .handled }
+                .onKeyPress(.return) { onConfirm(); return .handled }
 
             if !searchText.isEmpty {
                 Button("Clear search", systemImage: "xmark.circle.fill", action: { searchText = "" })
