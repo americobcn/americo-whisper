@@ -6,6 +6,7 @@
 //
 
 import CoreMedia
+import os
 import ScreenCaptureKit
 
 @MainActor @Observable
@@ -13,8 +14,7 @@ class SystemAudioCapture: NSObject {
     var isCapturing = false
 
     private var stream: SCStream?
-    private nonisolated(unsafe) let bufferLock = NSLock()
-    private nonisolated(unsafe) var _audioBuffer: [Float] = []
+    private let audioBuffer = OSAllocatedUnfairLock<[Float]>(initialState: [])
 
     func startCapturing() async throws {
         let content = try await SCShareableContent.current
@@ -31,7 +31,7 @@ class SystemAudioCapture: NSObject {
         config.minimumFrameInterval = CMTime(value: 1, timescale: 1)
 
         let filter = SCContentFilter(display: display, excludingApplications: [], exceptingWindows: [])
-        bufferLock.lock(); _audioBuffer = []; bufferLock.unlock()
+        audioBuffer.withLock { $0 = [] }
 
         let newStream = SCStream(filter: filter, configuration: config, delegate: nil)
         try newStream.addStreamOutput(self, type: .audio, sampleHandlerQueue: nil)
@@ -43,9 +43,10 @@ class SystemAudioCapture: NSObject {
     }
 
     func drainSamples() -> [Float] {
-        bufferLock.lock()
-        defer { _audioBuffer = []; bufferLock.unlock() }
-        return _audioBuffer
+        audioBuffer.withLock { buf in
+            defer { buf = [] }
+            return buf
+        }
     }
 
     func stopCapturing() -> [Float] {
@@ -97,8 +98,6 @@ extension SystemAudioCapture: SCStreamOutput {
             count: count
         ))
 
-        bufferLock.lock()
-        _audioBuffer.append(contentsOf: samples)
-        bufferLock.unlock()
+        audioBuffer.withLock { $0.append(contentsOf: samples) }
     }
 }
