@@ -143,7 +143,7 @@ struct AudioFileReader {
     
     static func loadAudioInChunks(
         from url: URL,
-        chunkDuration: Double = 30.0,
+        chunkDuration: Double = 20.0, // 30
         onChunk: ([Float]) async throws -> Void
     ) async throws {
         guard FileManager.default.fileExists(atPath: url.path) else {
