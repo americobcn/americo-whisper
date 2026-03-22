@@ -96,11 +96,13 @@ class AudioRecorder: NSObject {
         )
         var deviceID = AudioDeviceID(0)
         var size = UInt32(MemoryLayout<AudioDeviceID>.size)
-        AudioObjectGetPropertyData(
-            AudioObjectID(kAudioObjectSystemObject),
-            &address, UInt32(MemoryLayout<CFString>.size), &cfUID,
-            &size, &deviceID
-        )
+        withUnsafeMutablePointer(to: &cfUID) { cfUIDPtr in
+            _ = AudioObjectGetPropertyData(
+                AudioObjectID(kAudioObjectSystemObject),
+                &address, UInt32(MemoryLayout<CFString>.size), cfUIDPtr,
+                &size, &deviceID
+            )
+        }
         guard deviceID != 0, let audioUnit = engine.inputNode.audioUnit else { return }
         AudioUnitSetProperty(
             audioUnit,
