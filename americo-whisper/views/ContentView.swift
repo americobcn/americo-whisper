@@ -26,9 +26,11 @@ struct ContentView: View {
     @State private var availableModels: [ModelInfo] = []
     @State private var selectedModel: ModelInfo?
     @State private var mode: TranscriptionMode = .transcribe
-    @State private var isHovered = false
+    @State private var isSaveHovered = false
+    @State private var isCancelHovered = false
     @State private var captureTimer: Timer?
     @State private var isChunkTranscribing = false
+    @State private var transcriptionTask: Task<Void, Never>?
 
     var body: some View {
         VStack(spacing: 20) {
@@ -128,18 +130,34 @@ struct ContentView: View {
         }
 
         Divider()
-                    
-        Button("Save Transcription", action: saveText)
-            .frame(width: 100, height: 40)
-            .buttonStyle(.borderless)
-            .foregroundStyle(isHovered ? Color.blue : Color.white)
-            .background(isHovered ? Color.blue.opacity(0.1) : Color.clear)
-            .clipShape(.rect(cornerRadius: 8))
-            .onHover { isHovered = $0 }
+
+        HStack(spacing: 8) {
+            if isTranscribing && currentFileName != nil {
+                Button("Cancel", action: cancelTranscription)
+                    .frame(width: 80, height: 40)
+                    .buttonStyle(.borderless)
+                    .foregroundStyle(isCancelHovered ? Color.red : Color.white)
+                    .background(isCancelHovered ? Color.red.opacity(0.1) : Color.clear)
+                    .clipShape(.rect(cornerRadius: 8))
+                    .onHover { isCancelHovered = $0 }
+            }
+            Button("Save Transcription", action: saveText)
+                .frame(width: 100, height: 40)
+                .buttonStyle(.borderless)
+                .foregroundStyle(isSaveHovered ? Color.blue : Color.white)
+                .background(isSaveHovered ? Color.blue.opacity(0.1) : Color.clear)
+                .clipShape(.rect(cornerRadius: 8))
+                .onHover { isSaveHovered = $0 }
+        }
         
     }
 
     
+    private func cancelTranscription() {
+        transcriptionTask?.cancel()
+        transcriptionTask = nil
+    }
+
     private func saveText() {
         guard !transcription.text.isEmpty else { return }
         let savePanel = NSSavePanel()
@@ -219,7 +237,7 @@ struct ContentView: View {
         errorMessage = nil
 
         Task.detached(priority: .userInitiated) {
-            let newState = WhisperState(modelPath: modelPath)
+            let newState = await WhisperState(modelPath: modelPath)
             await MainActor.run {
                 self.whisperState = newState
                 self.isLoadingModel = false
@@ -359,10 +377,11 @@ struct ContentView: View {
         let isTranslation = mode == .translate
         let whisper = whisperState
 
-        Task.detached(priority: .userInitiated) {
+        transcriptionTask = Task.detached(priority: .userInitiated) {
             do {
                 var fullResult = ""
                 try await AudioFileReader.loadAudioInChunks(from: url) { chunk in
+                    try Task.checkCancellation()
                     let chunkText = await Task.detached(priority: .userInitiated) {
                         await whisper?.transcribe(
                             audioData: chunk,
@@ -375,16 +394,23 @@ struct ContentView: View {
                         self.transcription.text += chunkText
                     }
                 }
-                
+
                 let fullText = fullResult.trimmingCharacters(in: .whitespacesAndNewlines)
                 await MainActor.run {
                     self.transcription.text = fullText.isEmpty ? "Transcription failed" : fullText
                     self.isTranscribing = false
+                    self.transcriptionTask = nil
+                }
+            } catch is CancellationError {
+                await MainActor.run {
+                    self.isTranscribing = false
+                    self.transcriptionTask = nil
                 }
             } catch {
                 await MainActor.run {
                     self.errorMessage = error.localizedDescription
                     self.isTranscribing = false
+                    self.transcriptionTask = nil
                 }
             }
         }

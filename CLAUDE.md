@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 macOS SwiftUI app that performs audio transcription using whisper.cpp. Supports real-time microphone recording, system audio capture, and audio file loading, with language selection, model management, and translation mode.
 
-- **Target**: macOS 15.7+, Xcode 26.2+, Swift 5.0+
+- **Target**: macOS 14.6+, Xcode 26.2+, Swift 5.0+
 - **Bundle ID**: `com.americobcn.americo-whisper`
 
 ## Required Skills
