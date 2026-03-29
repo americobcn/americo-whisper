@@ -1,0 +1,780 @@
+{
+  "schema_version": "1.2.0",
+  "created_at": "2026-03-29T12:19:15.831083+00:00",
+  "build": {
+    "entrypoint": "project",
+    "path": "americo-whisper.xcodeproj",
+    "scheme": "americo-whisper",
+    "configuration": "Debug",
+    "destination": "platform=macOS",
+    "derived_data_path": "",
+    "command": "xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO"
+  },
+  "environment": {
+    "host": "orion.local",
+    "macos_version": "macOS-26.4-arm64-arm-64bit-Mach-O",
+    "xcode_version": "Xcode 26.3\nBuild version 17C529",
+    "cwd": "/Users/americo/dev/Xcode Projects/americo-whisper"
+  },
+  "runs": {
+    "clean": [
+      {
+        "id": "clean-1",
+        "build_type": "clean",
+        "duration_seconds": 2.178,
+        "success": true,
+        "exit_code": 0,
+        "command": "xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO build -showBuildTimingSummary",
+        "raw_log_path": ".build-benchmark/20260329T121831Z-americo-whisper-clean-1.log",
+        "timing_summary_categories": [
+          {
+            "name": "SwiftCompile",
+            "seconds": 4.742,
+            "task_count": 14
+          },
+          {
+            "name": "CompileAssetCatalogVariant",
+            "seconds": 0.301,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftEmitModule",
+            "seconds": 0.285,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver",
+            "seconds": 0.252,
+            "task_count": 1
+          },
+          {
+            "name": "Ld",
+            "seconds": 0.244,
+            "task_count": 3
+          },
+          {
+            "name": "Copy",
+            "seconds": 0.023,
+            "task_count": 5
+          },
+          {
+            "name": "CopySwiftLibs",
+            "seconds": 0.018,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterWithLaunchServices",
+            "seconds": 0.016,
+            "task_count": 1
+          },
+          {
+            "name": "ExtractAppIntentsMetadata",
+            "seconds": 0.012,
+            "task_count": 1
+          },
+          {
+            "name": "GenerateAssetSymbols",
+            "seconds": 0.008,
+            "task_count": 1
+          },
+          {
+            "name": "LinkAssetCatalog",
+            "seconds": 0.007,
+            "task_count": 1
+          },
+          {
+            "name": "ProcessInfoPlistFile",
+            "seconds": 0.006,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterExecutionPolicyException",
+            "seconds": 0.006,
+            "task_count": 1
+          },
+          {
+            "name": "WriteAuxiliaryFile",
+            "seconds": 0.004,
+            "task_count": 15
+          },
+          {
+            "name": "Touch",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "ConstructStubExecutorLinkFileList",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation Requirements",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "Validate",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftMergeGeneratedHeaders",
+            "seconds": 0.0,
+            "task_count": 1
+          }
+        ]
+      },
+      {
+        "id": "clean-2",
+        "build_type": "clean",
+        "duration_seconds": 2.164,
+        "success": true,
+        "exit_code": 0,
+        "command": "xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO build -showBuildTimingSummary",
+        "raw_log_path": ".build-benchmark/20260329T121831Z-americo-whisper-clean-2.log",
+        "timing_summary_categories": [
+          {
+            "name": "SwiftCompile",
+            "seconds": 4.785,
+            "task_count": 14
+          },
+          {
+            "name": "SwiftEmitModule",
+            "seconds": 0.29,
+            "task_count": 1
+          },
+          {
+            "name": "CompileAssetCatalogVariant",
+            "seconds": 0.284,
+            "task_count": 1
+          },
+          {
+            "name": "Ld",
+            "seconds": 0.243,
+            "task_count": 3
+          },
+          {
+            "name": "SwiftDriver",
+            "seconds": 0.242,
+            "task_count": 1
+          },
+          {
+            "name": "Copy",
+            "seconds": 0.024,
+            "task_count": 5
+          },
+          {
+            "name": "CopySwiftLibs",
+            "seconds": 0.02,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterWithLaunchServices",
+            "seconds": 0.015,
+            "task_count": 1
+          },
+          {
+            "name": "ExtractAppIntentsMetadata",
+            "seconds": 0.013,
+            "task_count": 1
+          },
+          {
+            "name": "LinkAssetCatalog",
+            "seconds": 0.008,
+            "task_count": 1
+          },
+          {
+            "name": "GenerateAssetSymbols",
+            "seconds": 0.008,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterExecutionPolicyException",
+            "seconds": 0.006,
+            "task_count": 1
+          },
+          {
+            "name": "ProcessInfoPlistFile",
+            "seconds": 0.006,
+            "task_count": 1
+          },
+          {
+            "name": "WriteAuxiliaryFile",
+            "seconds": 0.003,
+            "task_count": 15
+          },
+          {
+            "name": "Touch",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "ConstructStubExecutorLinkFileList",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation Requirements",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "Validate",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftMergeGeneratedHeaders",
+            "seconds": 0.0,
+            "task_count": 1
+          }
+        ]
+      },
+      {
+        "id": "clean-3",
+        "build_type": "clean",
+        "duration_seconds": 2.187,
+        "success": true,
+        "exit_code": 0,
+        "command": "xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO build -showBuildTimingSummary",
+        "raw_log_path": ".build-benchmark/20260329T121831Z-americo-whisper-clean-3.log",
+        "timing_summary_categories": [
+          {
+            "name": "SwiftCompile",
+            "seconds": 4.772,
+            "task_count": 14
+          },
+          {
+            "name": "SwiftEmitModule",
+            "seconds": 0.299,
+            "task_count": 1
+          },
+          {
+            "name": "CompileAssetCatalogVariant",
+            "seconds": 0.284,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver",
+            "seconds": 0.251,
+            "task_count": 1
+          },
+          {
+            "name": "Ld",
+            "seconds": 0.244,
+            "task_count": 3
+          },
+          {
+            "name": "Copy",
+            "seconds": 0.024,
+            "task_count": 5
+          },
+          {
+            "name": "CopySwiftLibs",
+            "seconds": 0.018,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterWithLaunchServices",
+            "seconds": 0.015,
+            "task_count": 1
+          },
+          {
+            "name": "ExtractAppIntentsMetadata",
+            "seconds": 0.012,
+            "task_count": 1
+          },
+          {
+            "name": "LinkAssetCatalog",
+            "seconds": 0.01,
+            "task_count": 1
+          },
+          {
+            "name": "WriteAuxiliaryFile",
+            "seconds": 0.009,
+            "task_count": 15
+          },
+          {
+            "name": "GenerateAssetSymbols",
+            "seconds": 0.007,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterExecutionPolicyException",
+            "seconds": 0.006,
+            "task_count": 1
+          },
+          {
+            "name": "ProcessInfoPlistFile",
+            "seconds": 0.006,
+            "task_count": 1
+          },
+          {
+            "name": "Touch",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "ConstructStubExecutorLinkFileList",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation Requirements",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "Validate",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftMergeGeneratedHeaders",
+            "seconds": 0.0,
+            "task_count": 1
+          }
+        ]
+      }
+    ],
+    "incremental": [
+      {
+        "id": "zero-change-1",
+        "build_type": "zero-change",
+        "duration_seconds": 0.876,
+        "success": true,
+        "exit_code": 0,
+        "command": "xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO build -showBuildTimingSummary",
+        "raw_log_path": ".build-benchmark/20260329T121831Z-americo-whisper-zero-change-1.log",
+        "timing_summary_categories": [
+          {
+            "name": "CopySwiftLibs",
+            "seconds": 0.022,
+            "task_count": 1
+          },
+          {
+            "name": "ProcessInfoPlistFile",
+            "seconds": 0.005,
+            "task_count": 1
+          }
+        ]
+      },
+      {
+        "id": "zero-change-2",
+        "build_type": "zero-change",
+        "duration_seconds": 0.778,
+        "success": true,
+        "exit_code": 0,
+        "command": "xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO build -showBuildTimingSummary",
+        "raw_log_path": ".build-benchmark/20260329T121831Z-americo-whisper-zero-change-2.log",
+        "timing_summary_categories": [
+          {
+            "name": "CopySwiftLibs",
+            "seconds": 0.018,
+            "task_count": 1
+          },
+          {
+            "name": "ProcessInfoPlistFile",
+            "seconds": 0.005,
+            "task_count": 1
+          }
+        ]
+      },
+      {
+        "id": "zero-change-3",
+        "build_type": "zero-change",
+        "duration_seconds": 0.809,
+        "success": true,
+        "exit_code": 0,
+        "command": "xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO build -showBuildTimingSummary",
+        "raw_log_path": ".build-benchmark/20260329T121831Z-americo-whisper-zero-change-3.log",
+        "timing_summary_categories": [
+          {
+            "name": "CopySwiftLibs",
+            "seconds": 0.017,
+            "task_count": 1
+          },
+          {
+            "name": "ProcessInfoPlistFile",
+            "seconds": 0.005,
+            "task_count": 1
+          }
+        ]
+      }
+    ],
+    "cached_clean": [
+      {
+        "id": "cached-clean-1",
+        "build_type": "cached-clean",
+        "duration_seconds": 6.815,
+        "success": true,
+        "exit_code": 0,
+        "command": "xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO -derivedDataPath /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq build -showBuildTimingSummary",
+        "raw_log_path": ".build-benchmark/20260329T121831Z-americo-whisper-cached-clean-1.log",
+        "timing_summary_categories": [
+          {
+            "name": "SwiftCompile",
+            "seconds": 39.693,
+            "task_count": 14
+          },
+          {
+            "name": "SwiftDriver",
+            "seconds": 0.444,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftEmitModule",
+            "seconds": 0.307,
+            "task_count": 1
+          },
+          {
+            "name": "CompileAssetCatalogVariant",
+            "seconds": 0.253,
+            "task_count": 1
+          },
+          {
+            "name": "Ld",
+            "seconds": 0.248,
+            "task_count": 3
+          },
+          {
+            "name": "CopySwiftLibs",
+            "seconds": 0.018,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterWithLaunchServices",
+            "seconds": 0.015,
+            "task_count": 1
+          },
+          {
+            "name": "ExtractAppIntentsMetadata",
+            "seconds": 0.012,
+            "task_count": 1
+          },
+          {
+            "name": "Copy",
+            "seconds": 0.009,
+            "task_count": 5
+          },
+          {
+            "name": "GenerateAssetSymbols",
+            "seconds": 0.007,
+            "task_count": 1
+          },
+          {
+            "name": "WriteAuxiliaryFile",
+            "seconds": 0.006,
+            "task_count": 15
+          },
+          {
+            "name": "RegisterExecutionPolicyException",
+            "seconds": 0.006,
+            "task_count": 1
+          },
+          {
+            "name": "ProcessInfoPlistFile",
+            "seconds": 0.005,
+            "task_count": 1
+          },
+          {
+            "name": "Touch",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "LinkAssetCatalog",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "ConstructStubExecutorLinkFileList",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation Requirements",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "Validate",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftMergeGeneratedHeaders",
+            "seconds": 0.001,
+            "task_count": 1
+          }
+        ]
+      },
+      {
+        "id": "cached-clean-2",
+        "build_type": "cached-clean",
+        "duration_seconds": 7.046,
+        "success": true,
+        "exit_code": 0,
+        "command": "xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO -derivedDataPath /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq build -showBuildTimingSummary",
+        "raw_log_path": ".build-benchmark/20260329T121831Z-americo-whisper-cached-clean-2.log",
+        "timing_summary_categories": [
+          {
+            "name": "SwiftCompile",
+            "seconds": 41.875,
+            "task_count": 14
+          },
+          {
+            "name": "SwiftDriver",
+            "seconds": 0.466,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftEmitModule",
+            "seconds": 0.293,
+            "task_count": 1
+          },
+          {
+            "name": "Ld",
+            "seconds": 0.264,
+            "task_count": 3
+          },
+          {
+            "name": "CompileAssetCatalogVariant",
+            "seconds": 0.255,
+            "task_count": 1
+          },
+          {
+            "name": "CopySwiftLibs",
+            "seconds": 0.019,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterWithLaunchServices",
+            "seconds": 0.015,
+            "task_count": 1
+          },
+          {
+            "name": "Copy",
+            "seconds": 0.014,
+            "task_count": 5
+          },
+          {
+            "name": "ExtractAppIntentsMetadata",
+            "seconds": 0.012,
+            "task_count": 1
+          },
+          {
+            "name": "GenerateAssetSymbols",
+            "seconds": 0.007,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterExecutionPolicyException",
+            "seconds": 0.006,
+            "task_count": 1
+          },
+          {
+            "name": "ProcessInfoPlistFile",
+            "seconds": 0.005,
+            "task_count": 1
+          },
+          {
+            "name": "WriteAuxiliaryFile",
+            "seconds": 0.004,
+            "task_count": 15
+          },
+          {
+            "name": "Touch",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "LinkAssetCatalog",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "ConstructStubExecutorLinkFileList",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "Validate",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation Requirements",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftMergeGeneratedHeaders",
+            "seconds": 0.0,
+            "task_count": 1
+          }
+        ]
+      },
+      {
+        "id": "cached-clean-3",
+        "build_type": "cached-clean",
+        "duration_seconds": 6.877,
+        "success": true,
+        "exit_code": 0,
+        "command": "xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO -derivedDataPath /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq build -showBuildTimingSummary",
+        "raw_log_path": ".build-benchmark/20260329T121831Z-americo-whisper-cached-clean-3.log",
+        "timing_summary_categories": [
+          {
+            "name": "SwiftCompile",
+            "seconds": 40.049,
+            "task_count": 14
+          },
+          {
+            "name": "SwiftDriver",
+            "seconds": 0.459,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftEmitModule",
+            "seconds": 0.287,
+            "task_count": 1
+          },
+          {
+            "name": "CompileAssetCatalogVariant",
+            "seconds": 0.26,
+            "task_count": 1
+          },
+          {
+            "name": "Ld",
+            "seconds": 0.252,
+            "task_count": 3
+          },
+          {
+            "name": "CopySwiftLibs",
+            "seconds": 0.018,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterWithLaunchServices",
+            "seconds": 0.014,
+            "task_count": 1
+          },
+          {
+            "name": "Copy",
+            "seconds": 0.013,
+            "task_count": 5
+          },
+          {
+            "name": "ExtractAppIntentsMetadata",
+            "seconds": 0.012,
+            "task_count": 1
+          },
+          {
+            "name": "GenerateAssetSymbols",
+            "seconds": 0.007,
+            "task_count": 1
+          },
+          {
+            "name": "WriteAuxiliaryFile",
+            "seconds": 0.006,
+            "task_count": 15
+          },
+          {
+            "name": "ProcessInfoPlistFile",
+            "seconds": 0.006,
+            "task_count": 1
+          },
+          {
+            "name": "RegisterExecutionPolicyException",
+            "seconds": 0.005,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation Requirements",
+            "seconds": 0.002,
+            "task_count": 1
+          },
+          {
+            "name": "Touch",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "LinkAssetCatalog",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "Validate",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "ConstructStubExecutorLinkFileList",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftDriver Compilation",
+            "seconds": 0.001,
+            "task_count": 1
+          },
+          {
+            "name": "SwiftMergeGeneratedHeaders",
+            "seconds": 0.0,
+            "task_count": 1
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "clean": {
+      "count": 3,
+      "min_seconds": 2.164,
+      "max_seconds": 2.187,
+      "median_seconds": 2.178,
+      "average_seconds": 2.176
+    },
+    "incremental": {
+      "count": 3,
+      "min_seconds": 0.778,
+      "max_seconds": 0.876,
+      "median_seconds": 0.809,
+      "average_seconds": 0.821
+    },
+    "cached_clean": {
+      "count": 3,
+      "min_seconds": 6.815,
+      "max_seconds": 7.046,
+      "median_seconds": 6.877,
+      "average_seconds": 6.913
+    }
+  },
+  "notes": []
+}

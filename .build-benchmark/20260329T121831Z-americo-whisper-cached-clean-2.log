@@ -1,0 +1,707 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO -derivedDataPath /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq build -showBuildTimingSummary
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'americo-whisper' in project 'americo-whisper' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 3d665efe45ae9269f1a1185930a5c61c
+Build description path: /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/XCBuildData/3d665efe45ae9269f1a1185930a5c61c.xcbuilddata
+CreateBuildDirectory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper.xcodeproj
+    builtin-create-build-directory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex
+
+CreateBuildDirectory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper.xcodeproj
+    builtin-create-build-directory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/SDKStatCaches.noindex/macosx26.2-25C58-dc75598d0054f22ec865fa860f139d7200fa09913b459cbbc988d1f6730289ae.sdkstatcache
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -o /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/SDKStatCaches.noindex/macosx26.2-25C58-dc75598d0054f22ec865fa860f139d7200fa09913b459cbbc988d1f6730289ae.sdkstatcache
+
+CreateBuildDirectory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper.xcodeproj
+    builtin-create-build-directory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper.xcodeproj
+    builtin-create-build-directory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/EagerLinkingTBDs/Debug
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper.xcodeproj
+    builtin-create-build-directory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/EagerLinkingTBDs/Debug
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper-8f2c762f0e3213dc90143ea994f0bcb7-VFS/all-product-headers.yaml
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper.xcodeproj
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper-8f2c762f0e3213dc90143ea994f0bcb7-VFS/all-product-headers.yaml
+
+CreateBuildDirectory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper.xcodeproj
+    builtin-create-build-directory /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper.hmap (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper.hmap
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper.DependencyStaticMetadataFileList (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper.DependencyMetadataFileList (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper.DependencyMetadataFileList
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-all-target-headers.hmap (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-all-target-headers.hmap
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-own-target-headers.hmap (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-own-target-headers.hmap
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-all-non-framework-target-headers.hmap (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-generated-files.hmap (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-generated-files.hmap
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-project-headers.hmap (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-project-headers.hmap
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/americo-whisper_const_extract_protocols.json (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/americo-whisper_const_extract_protocols.json
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.LinkFileList (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.LinkFileList
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/americo-whisper-OutputFileMap.json (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/americo-whisper-OutputFileMap.json
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.SwiftFileList (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.SwiftFileList
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.SwiftConstValuesFileList (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-DebugDylibPath-normal-arm64.txt (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-DebugDylibInstallName-normal-arm64.txt (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    write-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-DebugDylibInstallName-normal-arm64.txt
+
+MkDir /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /bin/mkdir -p /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents
+
+MkDir /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /bin/mkdir -p /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app
+
+MkDir /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Frameworks (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /bin/mkdir -p /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Frameworks
+
+MkDir /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Resources (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /bin/mkdir -p /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Resources
+
+MkDir /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /bin/mkdir -p /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS
+
+Ld /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS/__preview.dylib normal (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos14.6 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -O0 -L/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F/Users/americo/dev/Xcode\ Projects/americo-whisper -install_name @rpath/Américo\'s\ Whisper.debug.dylib -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper_dependency_info.dat -o /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS/__preview.dylib
+
+MkDir /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_output/unthinned (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /bin/mkdir -p /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_output/unthinned
+
+MkDir /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_output/thinned (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /bin/mkdir -p /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_output/thinned
+
+GenerateAssetSymbols /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/Assets.xcassets (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/Assets.xcassets --compile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Resources --output-format human-readable-text --notices --warnings --export-dependency-info /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_dependencies --output-partial-info-plist /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_generated_info.plist --app-icon AppIcon --accent-color AccentColor --enable-on-demand-resources NO --development-region en --target-device mac --minimum-deployment-target 14.6 --platform macosx --bundle-identifier com.americobcn.americo-whisper --generate-swift-asset-symbols /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/GeneratedAssetSymbols.h
+/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CompileAssetCatalogVariant thinned /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Resources /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/Assets.xcassets (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/Assets.xcassets --compile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_dependencies_thinned --output-partial-info-plist /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --enable-on-demand-resources NO --development-region en --target-device mac --minimum-deployment-target 14.6 --platform macosx
+/* com.apple.actool.compilation-results */
+/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_generated_info.plist_thinned
+/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_output/thinned/AppIcon.icns
+/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_output/thinned/Assets.car
+
+
+LinkAssetCatalog /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/Assets.xcassets (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-linkAssetCatalog --thinned /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_output/thinned --thinned-dependencies /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_generated_info.plist_thinned --unthinned /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_output/unthinned --unthinned-dependencies /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_generated_info.plist_unthinned --output /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Resources --plist-output /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_generated_info.plist
+note: Emplaced /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo's Whisper.app/Contents/Resources/AppIcon.icns (in target 'americo-whisper' from project 'americo-whisper')
+note: Emplaced /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo's Whisper.app/Contents/Resources/Assets.car (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriver americo-whisper normal arm64 com.apple.xcode.tools.swift.compiler (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Américo_s_Whisper -Onone -enforce-exclusivity\=checked @/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.SwiftFileList -DDEBUG -default-isolation\=MainActor -enable-bare-slash-regex -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos14.6 -g -module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F /Users/americo/dev/Xcode\ Projects/americo-whisper -emit-localized-strings -emit-localized-strings-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64 -c -j14 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/SDKStatCaches.noindex/macosx26.2-25C58-dc75598d0054f22ec865fa860f139d7200fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/americo-whisper-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex -sdk-module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.swiftmodule -validate-clang-modules-once -clang-build-session-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Session.modulevalidation -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/americo-whisper_const_extract_protocols.json -Xcc -iquote -Xcc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-generated-files.hmap -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-own-target-headers.hmap -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-all-target-headers.hmap -Xcc -iquote -Xcc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-project-headers.hmap -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/include -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources-normal/arm64 -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/arm64 -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper-Swift.h -working-directory /Users/americo/dev/Xcode\ Projects/americo-whisper -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/DeveloperToolsSupport-9ZYUFMX6IQFO36F11N4J7GT0V.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/SwiftShims-4FANAZ4DIR7XIBBQ29D0DDTXG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_Builtin_float-21E8ZRYR3SL5TZAHO5ZI6ATIU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_Builtin_stddef-EQEUPUR8Q28BXJZUS8CCO7TNY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/ptrcheck-6V6KGDEMWRL2KZ6RJD126LBEH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_AvailabilityInternal-A1OJBISG8T0LC8RNZUABF4UHH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_Builtin_stdbool-A6HANLESG9W0IAY17XTA1VFP8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_Builtin_stdarg-7MMQBLFB79LXPF5NSDI9XFY60.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_SwiftConcurrencyShims-2Z2T9R9GNQO5RW4ZY4INHZKIY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/ptrauth-3HZO9CLNA9WRSTQSH306I69R9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_DarwinFoundation1-1K388WYHA1CZ7UHNT7FW2WSK6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_DarwinFoundation2-6U9GXV783FXY16XDJINYVHOOR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_Builtin_limits-DQEN122ZJP5OWCZEW8WFSNKFI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_Builtin_tgmath-25GAI7G7W0CTKSI5XC03W0JP4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_Builtin_stdint-DEXWDMB126FK2JJB3V0BAA4P6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/sys_types-AZOUDUTKIIYHAXK8Z46DA581O.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_Builtin_intrinsics-6RIMME5F0QBRW6ZYISL5HCCVN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_DarwinFoundation3-CFFPBXBLSBDZLMTGT3283F0CE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/OpenGL-D0N7EO0RG51UZZ47D1YU2CKZG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_Builtin_stdatomic-9KMC2BLN5UP2FD7ZY4CI485OQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/libDER-78GZG9MFQBEFLAWPQZD6ZL2UW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/whisper-778AUTYARKBNTR4QANLRR31Z0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/_Builtin_inttypes-4VGOAGCM2MCAX21UYHFEWDRD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Darwin-365YKLPUTXHEIOP8HRXEWCDSI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/simd-4J3DYLDOWNSAMHR5EAHLRK3QB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/libkern-115VZVRD9TX9LNB9V3BCEB36D.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/MachO-22LG5NX27ZRSTLA8J08LC72IV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CUPS-8FBZXQMF5646YBR0JL8N4WNTB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/launch-7IAONFYG024MTAQKXK2G8CKBM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/ObjectiveC-7VCWLBW2TCOW9LVJGOF89TOWA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Spatial-2V2M9BLSS6YR39TGX96VDUEGB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/os_object-928Z34GJI06SND1EPUI0T8NB4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/os_workgroup-AT9YVVTTKLPGD1PY71X9PDZV4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Dispatch-4F34OMOWLPGMF4DGMVJK1HGB1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/XPC-5ZY83YZZA1A1WTZJBXDXNEYJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreFoundation-A47MMRE57X9K442E346MXHLGS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/os-49DRV44YXFZUT7UZ9IU1KAUGC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Security-6UEQGT3VE8HSEVQQ3HA9KVDL6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CFNetwork-22X13CLNJMMA8QKYUOPA5CY1B.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/IOKit-BB5DQ4UL0QJLH4EP22B1N402Y.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/ColorSync-8QFAY4USST8ADT9GO4XRBIH9G.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreAudioTypes-1FOSU6BAGF198KVA4WNZUQZ00.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreGraphics-C4Y9EPWWYLP4Q6X9AACM7NX4T.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/DiskArbitration-3ETKU9S9N8S7784WRL3MD792F.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreServices-4QSRUJEVME0M5HO2FUIVP28B1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreText-BI20S027319KZWTU6YKFTB2Z0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/ImageIO-9MP0UIANTAC2LC2UD4OA51LIO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Foundation-BXC4GRKPULEULIPHQ0Z0C8Z5L.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreTransferable-8M7S1A5797PYAZWP7DGL7OWS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Symbols-48369M0XRX681IG07CKYO12R1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/IOSurface-9L4FY3RIFZD5RJVT7ARLP3MAX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/DataDetection-4WY1WP96OQA6R6P0KL1W6FB2Z.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/ApplicationServices-BJJ5VAYMVAHYCV69NH6W5MWPL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/UniformTypeIdentifiers-BJD6W5NKRWAFI8VIDTZPBOK1W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreAudio-9HZ9NQFYHG5MC4E06414E2DNW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/OSLog-5IPD88ZG8SWRFOZVP32T8S9VY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Accessibility-4VLRFI3BCDY5Y7TVE77RETWYK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreData-4AI7LS22NA970NDH0MWBFDJDR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreMIDI-7ZMHA1COEVK55YEZ9MBZ5AORR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Metal-9NYBIMVD0TS7NB4E1KMIJS5N4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Carbon-16LXYVOGSY31G52RRGI6DMU8C.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreVideo-6CKC22ACPSI2B9XJ93SPDGO6I.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/AudioToolbox-5WBDJALFU2D4824WRORCOEB2Y.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/QuartzCore-62Z4IK88D9LXMFKS84QMUQ50L.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreMedia-9IZ2AZDHS5WWKZ560YQDXKP3B.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/CoreImage-DMEIZMRPEUZIOT3SOXHXI0ENM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/SwiftUICore-79KVL0Y77536DUX8M8MX0WBEL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/AVFAudio-EF31VKMC5AOT92VPWHL1O58T4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/MediaToolbox-DY3CVRDOYZAW19V57CWH0PM5A.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/AppKit-AKOW5DER7AG2KPVXZSWNX3HDP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/AVFoundation-93JR5IM6EIBHHFS2OB4W0CK6Z.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/SwiftUI-3UC7S8PD8DPCOY2BHCNTVFLO5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/ScreenCaptureKit-BLQKFGW71I90I5ZDQ7TTO6CAE.pcm
+
+SwiftCompile normal arm64 Compiling\ SourceSectionView.swift,\ TranscriptionOutputView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/SourceSectionView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/TranscriptionOutputView.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/SourceSectionView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/TranscriptionOutputView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ Américo_s_Whisper (in target 'americo-whisper' from project 'americo-whisper')
+
+EmitSwiftModule normal arm64 (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ LanguageSectionView.swift,\ ModelPickerView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguageSectionView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/ModelPickerView.swift (in target 'americo-whisper' from project 'americo-whisper')
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguageSectionView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/ModelPickerView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ ModelRowView.swift,\ ModelSectionView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/ModelRowView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/ModelSectionView.swift (in target 'americo-whisper' from project 'americo-whisper')
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/ModelRowView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/ModelSectionView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ ContentView.swift,\ LanguageListView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/ContentView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguageListView.swift (in target 'americo-whisper' from project 'americo-whisper')
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/ContentView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguageListView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ LanguageModelToolbar.swift,\ LanguagePickerView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguageModelToolbar.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguagePickerView.swift (in target 'americo-whisper' from project 'americo-whisper')
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguageModelToolbar.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguagePickerView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ AudioDropZone.swift,\ AutoDetectLanguageButton.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/AudioDropZone.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/AutoDetectLanguageButton.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/AudioDropZone.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/AutoDetectLanguageButton.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ WhisperLanguage.swift,\ WhisperState.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/WhisperLanguage.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/WhisperState.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/WhisperLanguage.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/WhisperState.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ LanguageRowView.swift,\ LanguageSearchField.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguageRowView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguageSearchField.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguageRowView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/LanguageSearchField.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ TextDocument.swift,\ TranscriptionMode.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/TextDocument.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/TranscriptionMode.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/TextDocument.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/TranscriptionMode.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ AudioSource.swift,\ ModelInfo.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/AudioSource.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/ModelInfo.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/AudioSource.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/ModelInfo.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ AppCoordinator.swift,\ AudioFileReader.swift,\ AudioRecorder.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/AppCoordinator.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/AudioFileReader.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/AudioRecorder.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/AppCoordinator.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/AudioFileReader.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/AudioRecorder.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ ModeSectionView.swift,\ RecordingControls.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/ModeSectionView.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/RecordingControls.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/ModeSectionView.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/views/RecordingControls.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ americo_whisperApp.swift,\ GeneratedAssetSymbols.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/americo_whisperApp.swift /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'americo-whisper' from project 'americo-whisper')
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/americo_whisperApp.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 Compiling\ ModelManager.swift,\ SystemAudioCapture.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/ModelManager.swift /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/SystemAudioCapture.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/ModelManager.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftCompile normal arm64 /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/src/SystemAudioCapture.swift (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for Américo_s_Whisper (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriver\ Compilation\ Requirements americo-whisper normal arm64 com.apple.xcode.tools.swift.compiler (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Américo_s_Whisper -Onone -enforce-exclusivity\=checked @/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.SwiftFileList -DDEBUG -default-isolation\=MainActor -enable-bare-slash-regex -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos14.6 -g -module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F /Users/americo/dev/Xcode\ Projects/americo-whisper -emit-localized-strings -emit-localized-strings-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64 -c -j14 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/SDKStatCaches.noindex/macosx26.2-25C58-dc75598d0054f22ec865fa860f139d7200fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/americo-whisper-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex -sdk-module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.swiftmodule -validate-clang-modules-once -clang-build-session-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Session.modulevalidation -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/americo-whisper_const_extract_protocols.json -Xcc -iquote -Xcc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-generated-files.hmap -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-own-target-headers.hmap -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-all-target-headers.hmap -Xcc -iquote -Xcc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-project-headers.hmap -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/include -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources-normal/arm64 -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/arm64 -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper-Swift.h -working-directory /Users/americo/dev/Xcode\ Projects/americo-whisper -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling WhisperLanguage.swift, WhisperState.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftMergeGeneratedHeaders /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/Américo_s_Whisper-Swift.h /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper-Swift.h (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-swiftHeaderTool -arch arm64 /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper-Swift.h -o /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/Américo_s_Whisper-Swift.h
+
+Copy /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo_s_Whisper.swiftmodule/arm64-apple-macos.swiftmodule /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.swiftmodule (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.swiftmodule /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo_s_Whisper.swiftmodule/arm64-apple-macos.swiftmodule
+
+Copy /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo_s_Whisper.swiftmodule/arm64-apple-macos.swiftdoc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.swiftdoc (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.swiftdoc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo_s_Whisper.swiftmodule/arm64-apple-macos.swiftdoc
+
+Copy /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo_s_Whisper.swiftmodule/arm64-apple-macos.abi.json /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.abi.json (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.abi.json /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo_s_Whisper.swiftmodule/arm64-apple-macos.abi.json
+
+Copy /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo_s_Whisper.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.swiftsourceinfo (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.swiftsourceinfo /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo_s_Whisper.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling AudioSource.swift, ModelInfo.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AppCoordinator.swift, AudioFileReader.swift, AudioRecorder.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ModelManager.swift, SystemAudioCapture.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling SourceSectionView.swift, TranscriptionOutputView.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ModeSectionView.swift, RecordingControls.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AudioDropZone.swift, AutoDetectLanguageButton.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling LanguageSectionView.swift, ModelPickerView.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ModelRowView.swift, ModelSectionView.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ContentView.swift, LanguageListView.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling LanguageRowView.swift, LanguageSearchField.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling TextDocument.swift, TranscriptionMode.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling LanguageModelToolbar.swift, LanguagePickerView.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriverJobDiscovery normal arm64 Compiling americo_whisperApp.swift, GeneratedAssetSymbols.swift (in target 'americo-whisper' from project 'americo-whisper')
+
+SwiftDriver\ Compilation americo-whisper normal arm64 com.apple.xcode.tools.swift.compiler (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Américo_s_Whisper -Onone -enforce-exclusivity\=checked @/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.SwiftFileList -DDEBUG -default-isolation\=MainActor -enable-bare-slash-regex -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos14.6 -g -module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F /Users/americo/dev/Xcode\ Projects/americo-whisper -emit-localized-strings -emit-localized-strings-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64 -c -j14 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/SDKStatCaches.noindex/macosx26.2-25C58-dc75598d0054f22ec865fa860f139d7200fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/americo-whisper-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex -sdk-module-cache-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.swiftmodule -validate-clang-modules-once -clang-build-session-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/ModuleCache.noindex/Session.modulevalidation -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/americo-whisper_const_extract_protocols.json -Xcc -iquote -Xcc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-generated-files.hmap -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-own-target-headers.hmap -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-all-target-headers.hmap -Xcc -iquote -Xcc /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-project-headers.hmap -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/include -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources-normal/arm64 -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources/arm64 -Xcc -I/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper-Swift.h -working-directory /Users/americo/dev/Xcode\ Projects/americo-whisper -experimental-emit-module-separately -disable-cmo
+
+Ld /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS/Américo\'s\ Whisper.debug.dylib normal (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos14.6 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -O0 -L/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -L/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F/Users/americo/dev/Xcode\ Projects/americo-whisper -filelist /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.LinkFileList -install_name @rpath/Américo\'s\ Whisper.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/../Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper.swiftmodule @/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo_s_Whisper-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -framework AVFoundation -framework Metal -framework Accelerate -framework whisper -o /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS/Américo\'s\ Whisper.debug.dylib
+
+ConstructStubExecutorLinkFileList /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-ExecutorLinkFileList-normal-arm64.txt (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    construct-stub-executor-link-file-list /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS/Américo\'s\ Whisper.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'americo-whisper' from project 'americo-whisper')
+
+Ld /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS/Américo\'s\ Whisper normal (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos14.6 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -O0 -L/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug -F/Users/americo/dev/Xcode\ Projects/americo-whisper -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/../Frameworks -rdynamic -Xlinker -no_deduplicate -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper-ExecutorLinkFileList-normal-arm64.txt /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS/Américo\'s\ Whisper.debug.dylib -o /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS/Américo\'s\ Whisper
+
+Copy /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Frameworks/whisper.framework /Users/americo/dev/Xcode\ Projects/americo-whisper/whisper.framework (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks -remove-static-executable /Users/americo/dev/Xcode\ Projects/americo-whisper/whisper.framework /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Frameworks
+
+ProcessInfoPlistFile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Info.plist /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/Info.plist (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-infoPlistUtility /Users/americo/dev/Xcode\ Projects/americo-whisper/americo-whisper/Info.plist -producttype com.apple.product-type.application -genpkginfo /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/PkgInfo -expandbuildsettings -platform macosx -additionalcontentfile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/assetcatalog_generated_info.plist -scanforprivacyfile /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Frameworks/whisper.framework -o /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Info.plist
+
+CopySwiftLibs /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS/Américo\'s\ Whisper.debug.dylib --scan-folder /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Frameworks --scan-folder /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/PlugIns --scan-folder /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Library/SystemExtensions --scan-folder /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Extensions --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk/System/Library/Frameworks/AVFoundation.framework --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk/System/Library/Frameworks/Metal.framework --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk/System/Library/Frameworks/Accelerate.framework --scan-folder /Users/americo/dev/Xcode\ Projects/americo-whisper/whisper.framework --platform macosx --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.z6zved/Metal.xctoolchain --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.z6zved/Metal.xctoolchain --module-name Américo_s_Whisper --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk --xcode-version 17C529 --platform-family macOS --deployment-target 14.6 --bundle-identifier com.americobcn.americo-whisper --output /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/Resources --target-triple arm64-apple-macos14.6 --binary-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app/Contents/MacOS/Américo\'s\ Whisper --dependency-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper_dependency_info.dat --stringsdata-file /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.SwiftFileList --metadata-file-list /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper.DependencyMetadataFileList --static-metadata-file-list /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Américo\'s\ Whisper.DependencyStaticMetadataFileList --swift-const-vals-list /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/americo-whisper.build/Debug/americo-whisper.build/Objects-normal/arm64/Américo\'s\ Whisper.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-03-29 14:19:06.058 appintentsmetadataprocessor[7116:53378] Starting appintentsmetadataprocessor export
+2026-03-29 14:19:06.059 appintentsmetadataprocessor[7116:53378] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+RegisterExecutionPolicyException /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-RegisterExecutionPolicyException /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app
+
+Validate /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    builtin-validationUtility /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app -no-validate-extension -infoplist-subpath Contents/Info.plist
+
+Touch /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /usr/bin/touch -c /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app
+
+RegisterWithLaunchServices /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app (in target 'americo-whisper' from project 'americo-whisper')
+    cd /Users/americo/dev/Xcode\ Projects/americo-whisper
+    /System/Library/Frameworks/CoreServices.framework/Versions/Current/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister -f -R -trusted /var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Products/Debug/Américo\'s\ Whisper.app
+
+GenerateSwiftModulesReport
+AVFAudio (Clang): 1 variant
+AVFoundation (Clang): 1 variant
+Accessibility (Clang): 1 variant
+AppKit (Clang): 1 variant
+ApplicationServices (Clang): 1 variant
+AudioToolbox (Clang): 1 variant
+CFNetwork (Clang): 1 variant
+CUPS (Clang): 1 variant
+Carbon (Clang): 1 variant
+ColorSync (Clang): 1 variant
+CoreAudio (Clang): 1 variant
+CoreAudioTypes (Clang): 1 variant
+CoreData (Clang): 1 variant
+CoreFoundation (Clang): 1 variant
+CoreGraphics (Clang): 1 variant
+CoreImage (Clang): 1 variant
+CoreMIDI (Clang): 1 variant
+CoreMedia (Clang): 1 variant
+CoreServices (Clang): 1 variant
+CoreText (Clang): 1 variant
+CoreTransferable (Clang): 1 variant
+CoreVideo (Clang): 1 variant
+Darwin (Clang): 1 variant
+DataDetection (Clang): 1 variant
+DeveloperToolsSupport (Clang): 1 variant
+DiskArbitration (Clang): 1 variant
+Dispatch (Clang): 1 variant
+Foundation (Clang): 1 variant
+IOKit (Clang): 1 variant
+IOSurface (Clang): 1 variant
+ImageIO (Clang): 1 variant
+MachO (Clang): 1 variant
+MediaToolbox (Clang): 1 variant
+Metal (Clang): 1 variant
+OSLog (Clang): 1 variant
+ObjectiveC (Clang): 1 variant
+OpenGL (Clang): 1 variant
+QuartzCore (Clang): 1 variant
+ScreenCaptureKit (Clang): 1 variant
+Security (Clang): 1 variant
+Spatial (Clang): 1 variant
+SwiftShims (Clang): 1 variant
+SwiftUI (Clang): 1 variant
+SwiftUICore (Clang): 1 variant
+Symbols (Clang): 1 variant
+UniformTypeIdentifiers (Clang): 1 variant
+XPC (Clang): 1 variant
+_AvailabilityInternal (Clang): 1 variant
+_Builtin_float (Clang): 1 variant
+_Builtin_intrinsics (Clang): 1 variant
+_Builtin_inttypes (Clang): 1 variant
+_Builtin_limits (Clang): 1 variant
+_Builtin_stdarg (Clang): 1 variant
+_Builtin_stdatomic (Clang): 1 variant
+_Builtin_stdbool (Clang): 1 variant
+_Builtin_stddef (Clang): 1 variant
+_Builtin_stdint (Clang): 1 variant
+_Builtin_tgmath (Clang): 1 variant
+_DarwinFoundation1 (Clang): 1 variant
+_DarwinFoundation2 (Clang): 1 variant
+_DarwinFoundation3 (Clang): 1 variant
+_SwiftConcurrencyShims (Clang): 1 variant
+launch (Clang): 1 variant
+libDER (Clang): 1 variant
+libkern (Clang): 1 variant
+os (Clang): 1 variant
+os_object (Clang): 1 variant
+os_workgroup (Clang): 1 variant
+ptrauth (Clang): 1 variant
+ptrcheck (Clang): 1 variant
+simd (Clang): 1 variant
+sys_types (Clang): 1 variant
+whisper (Clang): 1 variant
+
+Full report written to '/var/folders/9y/74rdm_856_3d03ng2pl7hs8m0000gn/T/xcode-bench-dd-qwm_1nvq/Build/Intermediates.noindex/XCBuildData/swiftmodulesreport'
+Build Timing Summary
+
+SwiftCompile (14 tasks) | 41.875 seconds
+
+SwiftDriver (1 task) | 0.466 seconds
+
+SwiftEmitModule (1 task) | 0.293 seconds
+
+Ld (3 tasks) | 0.264 seconds
+
+CompileAssetCatalogVariant (1 task) | 0.255 seconds
+
+CopySwiftLibs (1 task) | 0.019 seconds
+
+RegisterWithLaunchServices (1 task) | 0.015 seconds
+
+Copy (5 tasks) | 0.014 seconds
+
+ExtractAppIntentsMetadata (1 task) | 0.012 seconds
+
+GenerateAssetSymbols (1 task) | 0.007 seconds
+
+RegisterExecutionPolicyException (1 task) | 0.006 seconds
+
+ProcessInfoPlistFile (1 task) | 0.005 seconds
+
+WriteAuxiliaryFile (15 tasks) | 0.004 seconds
+
+Touch (1 task) | 0.001 seconds
+
+LinkAssetCatalog (1 task) | 0.001 seconds
+
+ConstructStubExecutorLinkFileList (1 task) | 0.001 seconds
+
+Validate (1 task) | 0.001 seconds
+
+SwiftDriver Compilation (1 task) | 0.001 seconds
+
+SwiftDriver Compilation Requirements (1 task) | 0.001 seconds
+
+SwiftMergeGeneratedHeaders (1 task) | 0.000 seconds
+
+** BUILD SUCCEEDED **
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00006040-001660A222EA801C, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00006040-001660A222EA801C, name:My Mac }

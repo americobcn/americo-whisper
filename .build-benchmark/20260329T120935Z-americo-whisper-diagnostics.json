@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "created_at": "2026-03-29T12:09:37.956151+00:00",
+  "type": "compilation-diagnostics",
+  "build": {
+    "entrypoint": "project",
+    "path": "americo-whisper.xcodeproj",
+    "scheme": "americo-whisper",
+    "configuration": "Debug",
+    "destination": "platform=macOS"
+  },
+  "threshold_ms": 100,
+  "build_duration_seconds": 2.173,
+  "build_success": true,
+  "raw_log_path": ".build-benchmark/20260329T120935Z-americo-whisper-diagnostics.log",
+  "warnings": [],
+  "summary": {
+    "total_warnings": 0,
+    "function_body_warnings": 0,
+    "expression_warnings": 0,
+    "slowest_ms": 0
+  }
+}

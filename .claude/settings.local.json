@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(xcodebuild:*)"
+      "Bash(xcodebuild:*)",
+      "Bash(find '/Users/americo/dev/Xcode Projects/americo-whisper' -maxdepth 3 \\\\\\(-name *.h -o -name *.hpp -o -name *.c -o -name *.cpp \\\\\\))",
+      "Bash(python3 /Users/americo/.claude/skills/xcode-build-orchestrator/scripts/benchmark_builds.py --project americo-whisper.xcodeproj --scheme americo-whisper --configuration Debug --destination \"platform=macOS\" --output-dir .build-benchmark)",
+      "Bash(python3 /Users/americo/.claude/skills/xcode-build-orchestrator/scripts/benchmark_builds.py --project americo-whisper.xcodeproj --scheme americo-whisper --configuration Debug --destination \"platform=macOS\" --output-dir .build-benchmark --extra-arg \"CODE_SIGNING_ALLOWED=NO\")",
+      "Bash(python3 /Users/americo/.claude/skills/xcode-build-orchestrator/scripts/diagnose_compilation.py --project americo-whisper.xcodeproj --scheme americo-whisper --configuration Debug --destination \"platform=macOS\" --threshold 100 --output-dir .build-benchmark --extra-arg \"CODE_SIGNING_ALLOWED=NO\")",
+      "Bash(python3 /Users/americo/.claude/skills/xcode-build-orchestrator/scripts/generate_optimization_report.py --benchmark \".build-benchmark/20260329T120908Z-americo-whisper.json\" --project-path americo-whisper.xcodeproj --diagnostics \".build-benchmark/20260329T120935Z-americo-whisper-diagnostics.json\" --output .build-benchmark/optimization-plan.md)",
+      "Bash(python3:*)"
     ]
   }
 }

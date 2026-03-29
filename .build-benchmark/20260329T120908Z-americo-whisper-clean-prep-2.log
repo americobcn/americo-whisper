@@ -1,0 +1,17 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project americo-whisper.xcodeproj -scheme americo-whisper -configuration Debug -destination platform=macOS CODE_SIGNING_ALLOWED=NO clean
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+** CLEAN SUCCEEDED **
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00006040-001660A222EA801C, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00006040-001660A222EA801C, name:My Mac }
